@@ -35,4 +35,5 @@ public class MovitaStepDefinitions {
        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
     }
 
+    //deneme
 }
