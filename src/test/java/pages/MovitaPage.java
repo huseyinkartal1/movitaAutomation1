@@ -26,6 +26,6 @@ public class MovitaPage {
     @FindBy(xpath = "//div[text()=\"Mobil Vasıta İzleme Takip Sistemi\"]")
     public WebElement mainTextTurkish;
 
-    //SELAM
+
 
 }
