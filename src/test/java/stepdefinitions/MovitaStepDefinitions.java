@@ -35,5 +35,5 @@ public class MovitaStepDefinitions {
        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
     }
 
-   //22:29
+   //22:29 değişiklik
 }
