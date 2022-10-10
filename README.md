@@ -1,7 +1,7 @@
 # Project Rules
 # For Configuration
 # Step1: You have to be added to project as a contributer (ask for this to your project lead). After being added as contributer you will clone the project
-# Step2: Create your own branch using "New branch" option in Intelij. Name Convension example: nameSurname
+# Step2: Create your own branch using "master" > New Branch from 'master'... option in Intelij. Name Convension example: nameSurname
 # Step3: Follows instractions provided in the video
 
 # Name Convension for "Feature" files: US_<UserStoryNumber>_TC_<TestCaseNumber>_<TestCaseDescripton>
