@@ -35,5 +35,5 @@ public class MovitaStepDefinitions {
        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
     }
 
-   //10 EKİM YENİ
+   //2.27 DEĞİŞİKLİK
 }
