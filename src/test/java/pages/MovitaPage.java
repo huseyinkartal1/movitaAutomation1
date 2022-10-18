@@ -26,6 +26,37 @@ public class MovitaPage {
     @FindBy(xpath = "//div[text()=\"Mobil Vasıta İzleme Takip Sistemi\"]")
     public WebElement mainTextTurkish;
 
+    //-------------Cozumler-----------
+//-------------Okul servis araclari----------
 
+    @FindBy(xpath = "(//h4)[4]")
+    public WebElement cozumlerOkul;
+
+    @FindBy(xpath = "//h1")
+    public WebElement okulServisText;
+
+//-------------Kamerali arac takip sistemi-----------
+
+    @FindBy(xpath = "(//h4)[5]")
+    public WebElement cozumlerKamerali;
+
+    @FindBy(xpath = "//h1")
+    public WebElement kameraliAracText;
+
+//-------------Kişi Bilgilendirme Sistemi-----------
+
+    @FindBy(xpath = "(//h4)[6]")
+    public WebElement cozumlerKisi;
+
+    @FindBy(xpath = "//h1")
+    public WebElement kisiBilgilendirmeText;
+
+//-------------Kişi ve Nesne Sistemi-----------
+
+    @FindBy(xpath = "//*[@id=\"post-list-footer\"]/div[4]/div/div/div/h4/a")
+    public WebElement cozumlerKisiVeNesne;
+
+    @FindBy(xpath = "//h1")
+    public WebElement kisiVeNesneText;
 
 }

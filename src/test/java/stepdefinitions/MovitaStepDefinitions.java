@@ -36,4 +36,122 @@ public class MovitaStepDefinitions {
     }
 
    //2.32 değişiklik
+
+    //-------------------------Çözümler----------------------------------
+    //-------------------------Okul Servis Aracları Takip Sistemi----------------------------------
+    @Given("User navigates to {string} page6")
+    public void user_navigates_to_page6(String homePage) {
+        Driver.getDriver().get(ConfigurationReader.getProperty(homePage));
+    }
+
+    @When("hover over6 {string}")
+    public void hover_over6(String string) {
+        Driver.getDriver().navigate().to("https://movita.com.tr");
+        ReusableMethods.hover(movita.cozumlerOkul);
+    }
+
+    @When("User should see6 {string} text")
+    public void user_should_see6_text(String okulServis) {
+        movita.cozumlerOkul.isDisplayed();
+        String cozumlerOkulText=movita.cozumlerOkul.getText();
+        Assert.assertEquals(cozumlerOkulText,"Okul Servis Araçları Takip Sistemi");
+    }
+
+    @Then("User should click6 {string}")
+    public void user_should_click6(String string) {
+        movita.cozumlerOkul.click();
+    }
+
+    @Then("User should see6 {string} text6")
+    public void user_should_see6_text6(String okulServisAraclari) {
+        movita.okulServisText.isDisplayed();
+        String expOkulServisText=movita.okulServisText.getText();
+        Assert.assertEquals(expOkulServisText,"OKUL SERVIS ARAÇLARI TAKIP SISTEMI");
+    }
+
+//-------------------------Kameralı Araç Takip Sistemi----------------------------------
+
+
+    @When("hover over7 {string}")
+    public void hover_over7(String string) {
+        Driver.getDriver().navigate().to("https://movita.com.tr");
+        ReusableMethods.hover(movita.cozumlerKamerali);
+    }
+
+    @When("User should see7 {string} text")
+    public void user_should_see7_text(String string) {
+        movita.cozumlerKamerali.isDisplayed();
+        String cozumlerKameraliText=movita.cozumlerKamerali.getText();
+        Assert.assertEquals(cozumlerKameraliText,"Kameralı Araç Takip Sistemi");
+    }
+
+    @Then("User should click7 {string}")
+    public void user_should_click7(String string) {
+        movita.cozumlerKamerali.click();
+    }
+
+    @Then("User should see7 {string} text7")
+    public void user_should_see7_text7(String string) {
+        movita.kameraliAracText.isDisplayed();
+        String expKameraliAracText=movita.kameraliAracText.getText();
+        Assert.assertEquals(expKameraliAracText,"KAMERALI ARAÇ TAKIP SISTEMI");
+    }
+
+//-------------------------Kişi Bilgilendirme Sistemi-------------------------------
+
+    @When("hover over8 {string}")
+    public void hover_over8(String string) {
+        Driver.getDriver().navigate().to("https://movita.com.tr");
+        ReusableMethods.hover(movita.cozumlerKisi);
+    }
+
+    @When("User should see8 {string} text")
+    public void user_should_see8_text(String string) {
+        movita.cozumlerKisi.isDisplayed();
+        String cozumlerKisiText=movita.cozumlerKisi.getText();
+        Assert.assertEquals(cozumlerKisiText,"Kişi Bilgilendirme Sistemi");
+    }
+
+    @Then("User should click8 {string}")
+    public void user_should_click8(String string) {
+        movita.cozumlerKisi.click();
+    }
+
+    @Then("User should see8 {string} text8")
+    public void user_should_see8_text8(String string) {
+        movita.kisiBilgilendirmeText.isDisplayed();
+        String expKisiBilgilendirmeText=movita.kisiBilgilendirmeText.getText();
+        Assert.assertEquals(expKisiBilgilendirmeText,"KIŞI BILGILENDIRME SISTEMI");
+    }
+
+//-------------------------Kişi ve Nesne Sistemi-------------------------------
+
+    @When("hover over9 {string}")
+    public void hover_over9(String string) {
+        Driver.getDriver().navigate().to("https://movita.com.tr");
+        ReusableMethods.hover(movita.cozumlerKisiVeNesne);
+    }
+
+    @When("User should see9 {string} text")
+    public void user_should_see9_text(String string) {
+        movita.cozumlerKisiVeNesne.isDisplayed();
+        String cozumlerKisiVeNesneText=movita.cozumlerKisiVeNesne.getText();
+        Assert.assertEquals(cozumlerKisiVeNesneText,"Kişi ve Nesne/Hayvan Takip Sistemi");
+    }
+
+
+    @Then("User should click9 {string}")
+    public void user_should_click9(String string) {
+        ReusableMethods.hover(movita.cozumlerKisiVeNesne);
+        movita.cozumlerKisiVeNesne.click();
+    }
+
+    @Then("User should see9 {string} text9")
+    public void user_should_see9_text9(String string) {
+        movita.kisiVeNesneText.isDisplayed();
+        String expKisiVeNesneText=movita.kisiVeNesneText.getText();
+        Assert.assertEquals(expKisiVeNesneText,"KIŞI VE NESNE/HAYVAN TAKIP SISTEMI");
+    }
+
+
 }
