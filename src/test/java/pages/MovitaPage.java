@@ -9,6 +9,12 @@ import java.util.List;
 
 public class MovitaPage {
 
+
+ public void deneme(){
+
+ }
+
+
     public MovitaPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
