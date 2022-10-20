@@ -35,7 +35,6 @@ public class MovitaStepDefinitions {
        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
     }
 
-   //2.32 değişiklik
 
     //-------------------------Çözümler----------------------------------
     //-------------------------Okul Servis Aracları Takip Sistemi----------------------------------
