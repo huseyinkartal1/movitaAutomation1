@@ -12,4 +12,3 @@ Feature: Clickable Language Dropdown Menu
     And Click on Turkish
     Then Verify Turkish Writing
 
-#commit back deneme
