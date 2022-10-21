@@ -78,4 +78,27 @@ public class MovitaPage {
  @FindBy(xpath = "/html/body/div[1]/section[1]/div/div/div[1]/div/ul/li[1]/div[3]/div/div/div")
  public WebElement trWriting;
 
+ // ---------------huseyinKartal ------------
+ //--------------US_MAT11-TC_MAT100_Main Page First Section_Hover_Over_Menu----
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[5]/a/div")
+ public WebElement rotaOptimizasyonu;
+ @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+ public WebElement rotaWriting;
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[6]/a/div")
+ public WebElement uygulamalar;
+ @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+ public WebElement uygulamalarWriting;
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[7]/a/div")
+ public WebElement kilavuz;
+ @FindBy(xpath = "//*[@id=\"myTab2\"]/li[2]/a")
+ public WebElement kilavuzWriting;
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[8]/a/div")
+ public WebElement iletisim;
+ @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+ public WebElement iletisimWriting;
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/a/div")
+ public WebElement girisYap;
+ @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/form/button")
+ public WebElement girisYapButton;
+
 }

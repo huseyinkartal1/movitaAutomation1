@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.support.Color;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -187,4 +188,103 @@ public class MovitaStepDefinitions {
         ReusableMethods.waitForVisibility(movita.trWriting, 3);
         Assert.assertTrue(movita.trWriting.isDisplayed());
     }
+
+    // ---------------huseyinKartal ------------
+    //--------------US_MAT11-TC_MAT100_Main Page First Section_Hover_Over_Menu----
+    @Given("Hover over “ROTA OPTIMIZASYONU”")
+    public void hover_over_rota_optımızasyonu() {
+        ReusableMethods.hover(movita.rotaOptimizasyonu);
+    }
+
+    @Then("Verify “ROTA OPTIMIZASYONU” color change")
+    public void verify_rota_optımızasyonu_color_change() {
+        String s = movita.rotaOptimizasyonu.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+            Assert.assertEquals("#00adee", c);
+    }
+
+    @Given("Click on “ROTA OPTIMIZASYONU”")
+    public void click_on_rota_optımızasyonu() {
+    movita.rotaOptimizasyonu.click();
+    }
+    @Then("Verify writing “ROTA OPTIMIZASYONU”")
+    public void verify_writing_rota_optımızasyonu() {
+        Assert.assertTrue(movita.rotaWriting.isDisplayed());
+    }
+    @Given("Hover over “UYGULAMALAR”")
+    public void hover_over_uygulamalar() {
+        ReusableMethods.hover(movita.uygulamalar);
+    }
+    @Then("Verify “UYGULAMALAR” color change")
+    public void verify_uygulamalar_color_change() {
+        String s = movita.uygulamalar.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @Given("Click on “UYGULAMALAR”")
+    public void click_on_uygulamalar() {
+  movita.uygulamalar.click();
+    }
+    @Then("Verify writing “UYGULAMALAR”")
+    public void verify_writing_uygulamalar() {
+        Assert.assertTrue(movita.uygulamalarWriting.isDisplayed());
+    }
+    @Given("Hover over “KILAVUZ”")
+    public void hover_over_kılavuz() {
+        ReusableMethods.hover(movita.kilavuz);
+    }
+    @Then("Verify “KILAVUZ” color change")
+    public void verify_kılavuz_color_change() {
+        String s = movita.kilavuz.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @Given("Click on “KILAVUZ”")
+    public void click_on_kılavuz() {
+      movita.kilavuz.click();
+    }
+    @Then("Verify writing “movita Uygulama Kullanım Kılavuzu”")
+    public void verify_writing_movita_uygulama_kullanım_kılavuzu() {
+        Assert.assertTrue(movita.kilavuzWriting.isDisplayed());
+    }
+    @Given("Hover over “İLETİŞİM”")
+    public void hover_over_iletişim() {
+        ReusableMethods.hover(movita.iletisim);
+    }
+    @Then("Verify “İLETİŞİM” color change")
+    public void verify_iletişim_color_change() {
+        String s = movita.iletisim.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+    @Given("Click on “İLETİŞİM”")
+    public void click_on_iletişim() {
+    movita.iletisim.click();
+    }
+    @Then("Verify writing “İLETİŞİM”")
+    public void verify_writing_iletişim() {
+        Assert.assertTrue(movita.iletisimWriting.isDisplayed());
+    }
+    @Given("Hover over “Giriş Yap”")
+    public void hover_over_giriş_yap() {
+        ReusableMethods.hover(movita.girisYap);
+    }
+    @Then("Verify “Giriş Yap” color change")
+    public void verify_giriş_yap_color_change() {
+        String s = movita.girisYap.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @Given("Click on “Giriş Yap”")
+    public void click_on_giriş_yap() {
+    movita.girisYap.click();
+    }
+    @Then("Verify writing “Giriş Yap”")
+    public void verify_writing_giriş_yap() {
+        Assert.assertTrue(movita.girisYapButton.isDisplayed());
+    }
+
 }
