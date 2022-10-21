@@ -23,7 +23,7 @@ public class MovitaStepDefinitions {
     public void clicks_on_movita_logo() {
        movita.movitaLogo.click();
     }
-    @Then("User should navigate to homepage")
+    @Then("Verify the URL")
     public void user_should_navigate_to_homepage() {
       String expectedUrl="https://movita.com.tr/";
       String actualUrl=Driver.getDriver().getCurrentUrl();
@@ -152,5 +152,39 @@ public class MovitaStepDefinitions {
         Assert.assertEquals(expKisiVeNesneText,"KIŞI VE NESNE/HAYVAN TAKIP SISTEMI");
     }
 
+    // ---------------huseyinKartal ------------
+// ------Clickable Language Dropdown Menu-----------
+    @Given("Navigate to homepage")
+    public void navigate_to_homepage() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("movita"));
+    }
 
+    @Given("Locate dropdown")
+    public void hover_over_clickable() {
+        //  dropdown = new Select(movita.bayrak);
+        movita.flag_up_right.click();
+
+    }
+
+    @Given("Click on English")
+    public void click_on_english() {
+        movita.eng_Flag.click();
+    }
+
+    @Then("Verify English Writing")
+    public void verify_english_writing() {
+        ReusableMethods.waitForVisibility(movita.engWriting, 3);
+        Assert.assertTrue(movita.engWriting.isDisplayed());
+    }
+
+    @Given("Click on Turkish")
+    public void click_on_turkish() {
+        movita.tr_Flag.click();
+    }
+
+    @Then("Verify Turkish Writing")
+    public void verify_turkish_writing() {
+        ReusableMethods.waitForVisibility(movita.trWriting, 3);
+        Assert.assertTrue(movita.trWriting.isDisplayed());
+    }
 }

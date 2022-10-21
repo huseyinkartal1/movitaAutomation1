@@ -65,4 +65,17 @@ public class MovitaPage {
     @FindBy(xpath = "//h1")
     public WebElement kisiVeNesneText;
 
+
+ //---------Clickable Drowdown Language Menu---------------------
+ @FindBy(xpath = "//*[@id=\"dropdownMenuButton\"]/img")
+ public WebElement flag_up_right;
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/div[3]/div/a[1]/img")
+ public WebElement eng_Flag;
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/div[3]/div/a[2]/img")
+ public WebElement tr_Flag;
+ @FindBy(xpath = "/html/body/div[1]/section[1]/div/div/div[1]/div/ul/li[1]/div[3]/div/div/div")
+ public WebElement engWriting;
+ @FindBy(xpath = "/html/body/div[1]/section[1]/div/div/div[1]/div/ul/li[1]/div[3]/div/div/div")
+ public WebElement trWriting;
+
 }
