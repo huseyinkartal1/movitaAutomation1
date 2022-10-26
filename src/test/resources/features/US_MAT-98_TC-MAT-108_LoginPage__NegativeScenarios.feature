@@ -12,7 +12,7 @@
     Then user clicks secondGirisYap button
     Then user verifies that ‘Lütfen kullanıcı adınızı veya şifrenizi doğru girdiğinizden emin olunuz.’ text should be displayed
 
-     # yanlış şifre doğru kullanıcı adı girildiğinde verilen uyarı farklı
+
    Scenario: incorrect password, correct username
      Then user enters username "demomovita" correctly
      And user enters password "123456" incorrectly
