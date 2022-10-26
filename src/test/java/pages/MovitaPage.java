@@ -134,4 +134,31 @@ public class MovitaPage {
  @FindBy(xpath = "(//*[.=\"Tüm Sektörlere Hitap Eden Çözümler\"])[3]")
  public WebElement arrowText;
 
+ @FindBy(xpath = "//*[.=\"GİRİŞ Yap\"]")
+ public WebElement firstGirisYap;
+
+ @FindBy(xpath = "//input[@id=\"username\"]")
+ public WebElement username;
+
+ @FindBy(xpath = "//input[@id=\"password\"]")
+ public WebElement password;
+
+ @FindBy(xpath = "//button[@type=\"submit\"]")
+ public WebElement secondGirisYap;
+
+ @FindBy(partialLinkText = "")
+ public WebElement hataText;
+
+ @FindBy(tagName = "body")
+ public WebElement bodyLogin;
+
+ @FindBy(xpath = "//img[@src=\"/images/profile_logo.png\"]")
+ public WebElement demoLogo;
+
+ @FindBy(xpath = "(//*[.=\"Lütfen şifrenizi girdiğinizden emin olun!\"])[1]")
+ public WebElement passwordWarning;
+
+ @FindBy(xpath = "(//*[.=\"Lütfen kullanıcı adınızı girdiğinizden emin olun!\"])[1]")
+ public WebElement usernameWarning;
+
 }

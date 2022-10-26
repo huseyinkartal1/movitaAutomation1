@@ -350,5 +350,80 @@ public class MovitaStepDefinitions {
         Assert.assertTrue(movita.arrowText.isDisplayed());
     }
 
-   //2.32 değişiklik
+    @Then("user clicks firstGirisYap button")
+    public void userClicksFirstGirisYapButton() {
+        movita.firstGirisYap.click();
+    }
+
+    @Then("user enters username incorrectly")
+    public void userEntersUsernameIncorrectly() {
+        movita.username.sendKeys("sss");
+    }
+
+    @And("user enters password correctly")
+    public void userEntersPasswordCorrectly() {
+        movita.password.sendKeys("11921992");
+    }
+
+    @Then("user clicks secondGirisYap button")
+    public void userClicksSecondGirisYapButton() {
+        movita.secondGirisYap.click();
+        ReusableMethods.waitFor(1);
+
+    }
+
+    @Then("user verifies that ‘Lütfen kullanıcı adınızı veya şifrenizi doğru girdiğinizden emin olunuz.’ text should be displayed")
+    public void userVerifiesThatLütfenKullanıcıAdınızıVeyaŞifreniziDoğruGirdiğinizdenEminOlunuzTextShouldBeDisplayed() {
+
+        String warning=movita.bodyLogin.getText();
+        assertTrue(warning.contains("HATA!"));
+    }
+
+    @Then("user enters username {string} correctly")
+    public void userEntersUsernameCorrectly(String username) {
+        movita.username.sendKeys(username);
+    }
+
+    @And("user enters password {string} incorrectly")
+    public void userEntersPasswordIncorrectly(String password) {
+        movita.password.sendKeys(password);
+    }
+
+    @Then("user enters username {string} incorrectly")
+    public void userEntersUsernameIncorrectly(String username) {
+        movita.username.sendKeys(username);
+    }
+
+    @And("user enters password {string} incorrect")
+    public void userEntersPasswordIncorrect(String password) {
+        movita.password.sendKeys(password);
+    }
+
+    @And("user enters password correct")
+    public void userEntersPasswordCorrect() {
+        movita.password.sendKeys(ConfigurationReader.getProperty("ValidPassword"));
+    }
+
+    @Then("user enters username  correct")
+    public void userEntersUsernameCorrect() {
+        movita.username.sendKeys(ConfigurationReader.getProperty("ValidUserName"));
+    }
+
+    @Then("user should login website")
+    public void userShouldLoginWebsite() {
+        assertTrue(movita.demoLogo.isDisplayed());
+    }
+
+    @Then("user verifies Lütfen şifrenizi girdiğinizden emin olun! text is displayed")
+    public void userVerifiesLütfenŞifreniziGirdiğinizdenEminOlunTextIsDisplayed() {
+        assertTrue(movita.passwordWarning.isDisplayed());
+    }
+
+    @Then("user verifies Lütfen kullanıcı adınızı girdiğinizden emin olun! text is displayed")
+    public void userVerifiesLütfenKullanıcıAdınızıGirdiğinizdenEminOlunTextIsDisplayed() {
+        assertTrue(movita.usernameWarning.isDisplayed());
+    }
+
+
+    //2.32 değişiklik
 }
