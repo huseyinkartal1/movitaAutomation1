@@ -1,4 +1,4 @@
-@MAT11
+
 Feature: Clickable Language Dropdown Menu
 
   Scenario: Clickable English Language
@@ -6,7 +6,7 @@ Feature: Clickable Language Dropdown Menu
     And   Locate dropdown
     And Click on English
     Then Verify English Writing
-
+@mat11 @crossfirefox
   Scenario: Clickable Turkish Language
     Given User navigates to "movita" page
     And   Locate dropdown
