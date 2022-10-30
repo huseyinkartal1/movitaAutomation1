@@ -1,4 +1,4 @@
-@MAT11
+
 Feature: US_MAT11-TC_-MAT91_Main Page First Section
   Scenario: Clickable Logo of Movita
     Given User navigates to "movita" page
