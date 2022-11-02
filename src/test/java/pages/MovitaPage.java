@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -98,7 +99,34 @@ public class MovitaPage {
  public WebElement iletisimWriting;
  @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/a/div")
  public WebElement girisYap;
- @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/form/button")
+ @FindBy(xpath = "//button[@type=\"submit\"]")
  public WebElement girisYapButton;
+
+ // ---------------huseyinKartal ------------
+ //--------------TC_MAT121_ForgotPassword
+
+ @FindBy(xpath="//a[text()=\"Şifrenizi mi unuttunuz?\"]")
+ public WebElement forgotPassword;
+
+ @FindBy(xpath="//button[text()=\" Şifre Değiştir\"]")
+ public WebElement changePassword;
+ @FindBy(xpath="//li[text()=\"Lütfen kullanıcı adınızı girdiğinizden emin olun!\"]")
+ public WebElement noneCredentials;
+
+@FindBy(id="username")
+ public WebElement userName;
+@FindBy(id="telefon")
+ public WebElement phoneNumber;
+
+ @FindBy(xpath="//div[@class=\"toast-message\"]")
+ public WebElement toastMessage;
+
+
+
+
+
+
+
+
 
 }
