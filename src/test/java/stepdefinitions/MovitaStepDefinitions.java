@@ -9,6 +9,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.Color;
+import org.testng.asserts.SoftAssert;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -20,6 +21,7 @@ import java.util.*;
 public class MovitaStepDefinitions {
 
     MovitaPage movita = new MovitaPage();
+    SoftAssert softAssert=new SoftAssert();
 
     @Given("User navigates to {string} page")
     public void user_navigates_to_page(String homePage) {
@@ -334,13 +336,14 @@ public class MovitaStepDefinitions {
     public void Verify_none_credentials() {
         String expected = "Lütfen kullanıcı adınızı veya telefon numaranızı doğru girdiğinizden emin olunuz.";
         String actual1 = "Lütfen kullanıcı adınızı girdiğinizden emin olun!";
-        Assert.assertEquals(expected, movita.noneCredentials.getText());
+        softAssert.assertEquals(expected, movita.noneCredentials.getText());
     }
     @And("Verify valid username")
     public void valid_username() {
         String expected = "Lütfen kullanıcı adınızı veya telefon numaranızı doğru girdiğinizden emin olunuz.";
         String actual1 = "Telefon Bilgisi Doğru Değildir. Şifreniz Değiştirilmemiştir";
-        Assert.assertEquals(expected, movita.toastMessage.getText());
+         softAssert=new SoftAssert();
+        softAssert.assertEquals(expected, movita.toastMessage.getText());
     }
     @And("Verify valid phoneNumber")
     public void valid_phoneNumber() {
