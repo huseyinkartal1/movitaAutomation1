@@ -161,4 +161,31 @@ public class MovitaPage {
  @FindBy(xpath = "(//*[.=\"Lütfen kullanıcı adınızı girdiğinizden emin olun!\"])[1]")
  public WebElement usernameWarning;
 
+ @FindBy(xpath = "(//*[.=\"Şifrenizi mi unuttunuz?\"])[2]")
+ public WebElement sifrenimiUnuttun;
+
+ @FindBy(xpath = "//input[@id=\"username\"]")
+ public WebElement usernameBox;
+
+ @FindBy(xpath = "//input[@id=\"telefon\"]")
+ public WebElement telephoneBox;
+
+ @FindBy(xpath = "(//*[.=\"Movita Şifre Yenileme\"])[2]")
+ public WebElement sifreYenileme;
+
+ @FindBy(xpath = "(//img[@src=\"/images/icons/ic-logo.png\"])[2]")
+ public WebElement movitaLOGO;
+
+ @FindBy(xpath = "//button[@type=\"submit\"]")
+ public WebElement sifreDegistir;
+
+ @FindBy(xpath = "(//*[.=\"Giriş Ekranı\"])[2]")
+ public WebElement girisEkrani;
+
+ @FindBy(xpath = "(//a[@href=\"/\"])[2]")
+ public WebElement anaSayfayaDon;
+
+ @FindBy(xpath = "//div[@class=\"col-md-6 text-center text-md-start\"]")
+ public WebElement copyrightText;
+
 }

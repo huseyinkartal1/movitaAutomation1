@@ -11,6 +11,7 @@ import utilities.ConfigurationReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
@@ -424,6 +425,99 @@ public class MovitaStepDefinitions {
         assertTrue(movita.usernameWarning.isDisplayed());
     }
 
+    @Then("user clicks Şifrenizi mi unuttunuz? text")
+    public void userClicksŞifreniziMiUnuttunuzText() {
+            movita.sifrenimiUnuttun.click();
+    }
 
-    //2.32 değişiklik
+    @Then("username box and telephone box should be enabled")
+    public void usernameBoxAndTelephoneBoxShouldBeEnabled() {
+        assertTrue(movita.usernameBox.isEnabled());
+        assertTrue(movita.telephoneBox.isEnabled());
+    }
+
+    @And("Movita Şifre Yenileme text should be displayed")
+    public void movitaŞifreYenilemeTextShouldBeDisplayed() {
+        assertTrue(movita.sifreYenileme.isDisplayed());
+    }
+
+    @Then("Movita Logo should be displayed")
+    public void movitaLogoShouldBeDisplayed() {
+        assertTrue(movita.movitaLOGO.isDisplayed());
+    }
+
+    @Then("Blue colored Şifre Değiştir  button should be displayed")
+    public void blueColoredŞifreDeğiştirButtonShouldBeDisplayed() {
+        assertTrue(movita.sifreDegistir.isDisplayed());
+    }
+
+    @And("Giriş Ekranı link should be displayed")
+    public void girişEkranıLinkShouldBeDisplayed() {
+        assertTrue(movita.girisEkrani.isDisplayed());
+    }
+
+    @And("User hovers over Giriş Ekranı link")
+    public void userHoversOverGirişEkranıLink() {
+       // ReusableMethods.hover(movita.girisEkrani);
+    }
+
+    @Then("Color of  Giriş Ekranı link’s  text should be green from blue")
+    public void colorOfGirişEkranıLinkSTextShouldBeGreenFromBlue() {
+        //ReusableMethods.hover(movita.sifreDegistir);
+        String firstColor=movita.girisEkrani.getCssValue("color");
+
+        ReusableMethods.hover(movita.girisEkrani);
+        String secondColor=movita.girisEkrani.getCssValue("color");
+        System.out.println("firstColor = " + firstColor);
+        System.out.println("secondColor = " + secondColor);
+        assertFalse(firstColor.equals(secondColor));
+    }
+
+    @Then("user clicks Giriş Ekranı link")
+    public void userClicksGirişEkranıLink() {
+        movita.girisEkrani.click();
+    }
+
+
+    @Then("Anasayfaya don text is displayed")
+    public void anasayfayaDonTextIsDisplayed() {
+        String anasayfayadon=movita.anaSayfayaDon.getText();
+        System.out.println("anasayfayadon = " + anasayfayadon);
+        assertTrue(movita.anaSayfayaDon.isDisplayed());
+    }
+
+    @And("user clicks anasayfaya don button")
+    public void userClicksAnasayfayaDonButton() {
+        movita.anaSayfayaDon.click();
+    }
+
+    @Then("main page should be opened")
+    public void mainPageShouldBeOpened() {
+        assertTrue(movita.firstGirisYap.isDisplayed());
+    }
+
+    @And("Copyright © {int}{int}, Bütün Hakları Saklıdır. text is displayed")
+    public void copyrightBütünHaklarıSaklıdırTextIsDisplayed(int arg0, int arg1) {
+        ReusableMethods.hover(movita.copyrightText);
+        System.out.println("movita.copyrightText.getText() = " + movita.copyrightText.getText());
+        assertTrue(movita.copyrightText.isDisplayed());
+    }
+
+    @Then("user navigates to back for opening giris ekrani")
+    public void userNavigatesToBackForOpeningGirisEkrani() {
+      Driver.getDriver().navigate().to("https://movita.com.tr/recover_password");
+
+    }
+
+    @And("user clicks Giriş Ekranı link again")
+    public void userClicksGirişEkranıLinkAgain() {
+        movita.girisEkrani.click();
+    }
+    @Then("login page should be opened")
+    public void loginPageShouldBeOpened() {
+
+       assertTrue(movita.secondGirisYap.isDisplayed());
+    }
+
+
 }
