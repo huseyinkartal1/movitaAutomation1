@@ -8,7 +8,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.Color;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
@@ -233,19 +232,19 @@ public class MovitaStepDefinitions {
 
     @Given("Hover over “UYGULAMALAR”")
     public void hover_over_uygulamalar() {
-        ReusableMethods.hover(movita.uygulamalar);
+        ReusableMethods.hover(movita.uygulamalar1);
     }
 
     @Then("Verify “UYGULAMALAR” color change")
     public void verify_uygulamalar_color_change() {
-        String s = movita.uygulamalar.getCssValue("color");
+        String s = movita.uygulamalar1.getCssValue("color");
         String c = Color.fromString(s).asHex();
         Assert.assertEquals("#00adee", c);
     }
 
     @Given("Click on “UYGULAMALAR”")
     public void click_on_uygulamalar() {
-        movita.uygulamalar.click();
+        movita.uygulamalar1.click();
     }
 
     @Then("Verify writing “UYGULAMALAR”")
@@ -255,19 +254,19 @@ public class MovitaStepDefinitions {
 
     @Given("Hover over “KILAVUZ”")
     public void hover_over_kılavuz() {
-        ReusableMethods.hover(movita.kilavuz);
+        ReusableMethods.hover(movita.kilavuz1);
     }
 
     @Then("Verify “KILAVUZ” color change")
     public void verify_kılavuz_color_change() {
-        String s = movita.kilavuz.getCssValue("color");
+        String s = movita.kilavuz1.getCssValue("color");
         String c = Color.fromString(s).asHex();
         Assert.assertEquals("#00adee", c);
     }
 
     @Given("Click on “KILAVUZ”")
     public void click_on_kılavuz() {
-        movita.kilavuz.click();
+        movita.kilavuz1.click();
     }
 
     @Then("Verify writing “movita Uygulama Kullanım Kılavuzu”")
@@ -277,19 +276,19 @@ public class MovitaStepDefinitions {
 
     @Given("Hover over “İLETİŞİM”")
     public void hover_over_iletişim() {
-        ReusableMethods.hover(movita.iletisim);
+        ReusableMethods.hover(movita.iletisim1);
     }
 
     @Then("Verify “İLETİŞİM” color change")
     public void verify_iletişim_color_change() {
-        String s = movita.iletisim.getCssValue("color");
+        String s = movita.iletisim1.getCssValue("color");
         String c = Color.fromString(s).asHex();
         Assert.assertEquals("#00adee", c);
     }
 
     @Given("Click on “İLETİŞİM”")
     public void click_on_iletişim() {
-        movita.iletisim.click();
+        movita.iletisim1.click();
     }
 
     @Then("Verify writing “İLETİŞİM”")
@@ -299,14 +298,20 @@ public class MovitaStepDefinitions {
 
     @Given("Hover over “Giriş Yap”")
     public void hover_over_giriş_yap() {
-        ReusableMethods.hover(movita.girisYap);
+        ReusableMethods.hover(movita.girisYap1);
     }
 
     @Then("Verify “Giriş Yap” color change")
     public void verify_giriş_yap_color_change() {
-        String s = movita.girisYap.getCssValue("color");
+        String s = movita.girisYap1.getCssValue("color");
         String c = Color.fromString(s).asHex();
         Assert.assertEquals("#00adee", c);
+    }
+
+
+    @Then("Verify writing “Giriş Yap”")
+    public void verifyWritingGirişYap() {
+        Assert.assertEquals("Giriş Yap",movita.girisYapButton.getText());
     }
 
 
@@ -318,7 +323,7 @@ public class MovitaStepDefinitions {
 
     @Given("Click on “Giriş Yap”")
     public void click_on_giriş_yap() {
-        movita.girisYap.click();
+        movita.girisYap1.click();
     }
     @Given("Click on \"Şifrenizi mi unuttunuz?\"")
     public void click_on_forgotPassword() {
@@ -506,9 +511,9 @@ public class MovitaStepDefinitions {
 
     @Given("Given user moves mouse cursor over  Uygulamalar OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverUygulamalarOPTİMİZASYONU() {
-        String ilkRenk=movita.uygulamalar.getCssValue("color");
-        ReusableMethods.hover(movita.uygulamalar);
-        String ikinciRenk=movita.uygulamalar.getCssValue("color");
+        String ilkRenk=movita.uygulamalar1.getCssValue("color");
+        ReusableMethods.hover(movita.uygulamalar1);
+        String ikinciRenk=movita.uygulamalar1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -519,7 +524,7 @@ public class MovitaStepDefinitions {
 
     @Then("user clicks on Uygulamalar OPTİMİZASYONU")
     public void userClicksOnUygulamalarOPTİMİZASYONU() {
-        movita.uygulamalar.click();
+        movita.uygulamalar1.click();
     }
 
     @And("when Uygulamalar OPTİMİZASYONU is clicked, the text of Uygulamalar OPTİMİZASYONU should be displayed on the screen.")
@@ -529,9 +534,9 @@ public class MovitaStepDefinitions {
 
     @Given("Given user moves mouse cursor over  Kılavuz OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverKılavuzOPTİMİZASYONU() {
-        String ilkRenk=movita.kilavuz.getCssValue("color");
-        ReusableMethods.hover(movita.kilavuz);
-        String ikinciRenk=movita.kilavuz.getCssValue("color");
+        String ilkRenk=movita.kilavuz1.getCssValue("color");
+        ReusableMethods.hover(movita.kilavuz1);
+        String ikinciRenk=movita.kilavuz1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -542,7 +547,7 @@ public class MovitaStepDefinitions {
 
     @Then("user clicks on Kılavuz OPTİMİZASYONU")
     public void userClicksOnKılavuzOPTİMİZASYONU() {
-        movita.kilavuz.click();
+        movita.kilavuz1.click();
 
     }
     @And("when Uygulamalar OPTİMİZASYONU is clicked, the text of Kılavuz OPTİMİZASYONU should be displayed on the screen.")
@@ -552,9 +557,9 @@ public class MovitaStepDefinitions {
 
     @Given("Given user moves mouse cursor over ILETISIM OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverILETISIMOPTİMİZASYONU() {
-        String ilkRenk=movita.kilavuz.getCssValue("color");
-        ReusableMethods.hover(movita.iletisim);
-        String ikinciRenk=movita.iletisim.getCssValue("color");
+        String ilkRenk=movita.kilavuz1.getCssValue("color");
+        ReusableMethods.hover(movita.iletisim1);
+        String ikinciRenk=movita.iletisim1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -564,19 +569,19 @@ public class MovitaStepDefinitions {
 
     @Then("user clicks on ILETISIM OPTİMİZASYONU")
     public void userClicksOnILETISIMOPTİMİZASYONU() {
-        movita.iletisim.click();
+        movita.iletisim1.click();
     }
 
     @And("when ILETISIM OPTİMİZASYONU is clicked, the text of ILETISIM OPTİMİZASYONU should be displayed on the screen.")
     public void whenILETISIMOPTİMİZASYONUIsClickedTheTextOfILETISIMOPTİMİZASYONUShouldBeDisplayedOnTheScreen() {
-        Assert.assertTrue(movita.iletisim.isDisplayed());
+        Assert.assertTrue(movita.iletisim1.isDisplayed());
     }
 
     @Given("Given user moves mouse cursor over  GIRIS YAP OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverGIRISYAPOPTİMİZASYONU() {
-        String ilkRenk=movita.girisYap.getCssValue("color");
-        ReusableMethods.hover(movita.girisYap);
-        String ikinciRenk=movita.girisYap.getCssValue("color");
+        String ilkRenk=movita.girisYap1.getCssValue("color");
+        ReusableMethods.hover(movita.girisYap1);
+        String ikinciRenk=movita.girisYap1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -586,7 +591,7 @@ public class MovitaStepDefinitions {
 
     @Then("user clicks on GIRIS YAP OPTİMİZASYONU")
     public void userClicksOnGIRISYAPOPTİMİZASYONU() {
-        movita.girisYap.click();
+        movita.girisYap1.click();
     }
 
     @And("when GIRIS YAP OPTİMİZASYONU is clicked, the text of Kılavuz OPTİMİZASYONU should be displayed on the screen.")

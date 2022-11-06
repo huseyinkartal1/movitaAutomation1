@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -104,10 +103,10 @@ public class MovitaPage {
  public WebElement girisYap;
  @FindBy(xpath = "//button[@type=\"submit\"]")
  public WebElement girisYapButton;
+ //--------------US_MAT11-TC_MAT100---END
 
  // ---------------huseyinKartal ------------
  //--------------TC_MAT121_ForgotPassword
-
  @FindBy(xpath="//a[text()=\"Şifrenizi mi unuttunuz?\"]")
  public WebElement forgotPassword;
 
@@ -123,7 +122,7 @@ public class MovitaPage {
 
  @FindBy(xpath="//div[@class=\"toast-message\"]")
  public WebElement toastMessage;
-
+ //--------------TC_MAT121_END
 
 
 
@@ -188,25 +187,25 @@ public class MovitaPage {
  public WebElement rotaText;
 
  @FindBy(xpath = "//a[@href=\"/uygulamalar\"]")
- public WebElement uygulamalar;
+ public WebElement uygulamalar1;
 
  @FindBy(xpath = "(//div[@class=\"container clearfix\"])[1]")
  public WebElement uygulamalarText;
 
  @FindBy(xpath = "//a[@href=\"/guide\"]")
- public WebElement kilavuz;
+ public WebElement kilavuz1;
 
  @FindBy(xpath = "//a[@href=\"#uygulama1\"]")
  public WebElement kilavuzText;
 
  @FindBy(xpath = "//a[@href=\"/iletisim\"]")
- public WebElement iletisim;
+ public WebElement iletisim1;
 
  @FindBy(xpath = "(//div[@class=\"container clearfix\"])[1]")
  public WebElement iletisimText;
 
  @FindBy(xpath = "//*[.=\"GİRİŞ Yap\"]")
- public WebElement girisYap;
+ public WebElement girisYap1;
 
  @FindBy(xpath = "//button[@type=\"submit\"]")
  public WebElement girisYapText;
