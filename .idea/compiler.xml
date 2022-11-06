@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="movitaAutomation" />
-        <module name="com.Movita Automation BDD FrameWork" />
         <module name="com.DenemeCucumberFramework" />
+        <module name="movitaAutomation1" />
+        <module name="com.Movita Automation BDD FrameWork" />
       </profile>
     </annotationProcessing>
   </component>
