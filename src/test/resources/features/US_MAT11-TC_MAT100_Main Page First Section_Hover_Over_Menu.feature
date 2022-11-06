@@ -33,4 +33,3 @@ Feature: Main Page First Section_Hover_Over_Menu
     And  Click on “Giriş Yap”
     Then Verify writing “Giriş Yap”
 
-    #push deneme 16.53
