@@ -15,9 +15,9 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 import java.util.*;
+
+import static org.junit.Assert.*;
 
 
 public class MovitaStepDefinitions {
@@ -834,9 +834,105 @@ public class MovitaStepDefinitions {
     }
     @Then("login page should be opened")
     public void loginPageShouldBeOpened() {
-
        assertTrue(movita.secondGirisYap.isDisplayed());
     }
 
 
+    @And("user clicks Raporlar button")
+    public void userClicksRaporlarButton() {
+        movita.menu.click();
+        movita.raporlar.click();
+    }
+
+    @Then("user clicks Araç Bazlı Rapor button")
+    public void userClicksAraçBazlıRaporButton() {
+        movita.aracBazliRapor.click();
+    }
+
+    @And("two blogs should be opened on the ‘Araç Bazlı Rapor’ page")
+    public void twoBlogsShouldBeOpenedOnTheAraçBazlıRaporPage() {
+        assertTrue(movita.leftBlog.isDisplayed());
+        assertTrue(movita.rightBlog.isDisplayed());
+    }
+
+    @Then("Arac dropdown should be displayed on the left blog")
+    public void aracDropdownShouldBeDisplayedOnTheLeftBlog() {
+        assertTrue(movita.aracDropdown.isDisplayed());
+    }
+
+    @Then("‘Başlangıç Tarihi’ dropdown should be displayed on the left blog")
+    public void başlangıçTarihiDropdownShouldBeDisplayedOnTheLeftBlog() {
+        assertTrue(movita.baslangicTarihi.isDisplayed());
+    }
+    @Then("Bitiş Tarihi dropdown should be displayed on the left blog")
+    public void bitişTarihiDropdownShouldBeDisplayedOnTheLeftBlog() {
+        assertTrue(movita.bitisTarihi.isDisplayed());
+    }
+
+    @Then("Rapor Al dropdown should be displayed on the left blog")
+    public void raporAlDropdownShouldBeDisplayedOnTheLeftBlog() {
+        assertTrue(movita.raporAl.isDisplayed());
+    }
+    @Then("Detaylı Arama,excel,pdf and print buttons are displayed on the right blog")
+    public void detaylıAramaExcelPdfAndPrintButtonsAreDisplayedOnTheRightBlog() {
+        assertTrue(movita.detayliAra.isDisplayed());
+        assertTrue(movita.excelButton.isDisplayed());
+        assertTrue(movita.pdfButton.isDisplayed());
+        assertTrue(movita.printButton.isDisplayed());
+    }
+
+    @Then("‘Bütün Kayıtlarda Ara’ search box is displayed on the right blog")
+    public void bütünKayıtlardaAraSearchBoxIsDisplayedOnTheRightBlog() {
+        assertTrue(movita.tumKayitlardaAra.isDisplayed());
+    }
+
+    @And("A graphical table below the buttons showing the results is displayed on the right blog")
+    public void aGraphicalTableBelowTheButtonsShowingTheResultsIsDisplayedOnTheRightBlog() {
+        assertTrue(movita.resultTable.isDisplayed());
+    }
+
+    @Then("‘Rapor almak için sol tarafta tarih aralığı seçerek 'Rapor Al’ butonuna tıklayınız.’ text is displayed on the right blog")
+    public void raporAlmakIçinSolTaraftaTarihAralığıSeçerekRaporAlButonunaTıklayınızTextIsDisplayedOnTheRightBlog() {
+
+        String actText=movita.tableText.getText();
+        String expText="Rapor almak için sol tarafta tarih aralığı seçerek 'Rapor Al’ butonuna tıklayınız.";
+        assertFalse(actText.equals(expText));
+    }
+
+    @Then("Heigths and bottoms should be the same of left blog and report blog on the right blog")
+    public void heigthsAndBottomsShouldBeTheSameOfLeftBlogAndReportBlogOnTheRightBlog() {
+        String leftBlogHeigth=movita.leftBlog.getCssValue("line-height");
+        String rightBlogHeigth=movita.rightBlog.getCssValue("line-height");
+        String leftBlogBottom=movita.leftBlog.getCssValue("min-height");
+        String rightBlogBottom=movita.rightBlog.getCssValue("min-height");
+
+        System.out.println("leftBlogHeigth = " + leftBlogHeigth);
+        System.out.println("rightBlogHeigth = " + rightBlogHeigth);
+        System.out.println("leftBlogBottom = " + leftBlogBottom);
+        System.out.println("rightBlogBottom = " + rightBlogBottom);
+
+        assertEquals(leftBlogHeigth,rightBlogHeigth);
+        assertEquals(leftBlogBottom,rightBlogBottom);
+    }
+
+    @And("‘Önceki' and ‘Sonraki’ buttons are enabled on the right blog")
+    public void öncekiAndSonrakiButtonsAreEnabledOnTheRightBlog() {
+        assertTrue(movita.oncekiSonraki.isDisplayed());
+    }
+
+
+    @Then("user hovers over all buttons")
+    public void userHoversOverAllButtons() {
+        ReusableMethods.hover(movita.aracDropdown);
+        ReusableMethods.hover(movita.baslangicTarihi);
+        ReusableMethods.hover(movita.bitisTarihi);
+        ReusableMethods.hover(movita.raporAl);
+        ReusableMethods.hover(movita.excelButton);
+        ReusableMethods.hover(movita.pdfButton);
+        ReusableMethods.hover(movita.printButton);
+        ReusableMethods.hover(movita.detayliAra);
+        ReusableMethods.hover(movita.tumKayitlardaAra);
+        ReusableMethods.hover(movita.resultTable);
+        ReusableMethods.hover(movita.oncekiSonraki);
+    }
 }
