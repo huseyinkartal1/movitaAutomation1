@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d3b0d43e-95c8-4305-b0d1-71bf88cf7ea3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/MovitaPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/MovitaPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/US_MAT11-TC_MAT100_Main Page First Section_Hover_Over_Menu.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/US_MAT11-TC_MAT100_Main Page First Section_Hover_Over_Menu.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
