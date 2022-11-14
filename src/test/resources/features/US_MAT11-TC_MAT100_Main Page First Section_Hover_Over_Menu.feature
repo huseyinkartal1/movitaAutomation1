@@ -2,7 +2,8 @@ Feature: Main Page First Section_Hover_Over_Menu
 
   Background: Go to homepage
     Given User navigates to "movita" page
-#
+#/
+  //deneme2
   Scenario: “ROTA OPTIMIZASYONU”
     And  Hover over “ROTA OPTIMIZASYONU”
     Then Verify “ROTA OPTIMIZASYONU” color change

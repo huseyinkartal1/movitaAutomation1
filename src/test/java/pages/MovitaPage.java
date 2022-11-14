@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MovitaPage {
 
-
+//check it out
  public void deneme(){
 
  }
