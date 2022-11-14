@@ -8,7 +8,10 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.interactions.Actions;
+
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.MovitaPage;
@@ -22,7 +25,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.*;
 
 
-public class MovitaStepDefinitions {
+public class MovitaStepDefinitions extends ReusableMethods {
 
     MovitaPage movita = new MovitaPage();
 
@@ -967,4 +970,97 @@ public class MovitaStepDefinitions {
     public void textSholdBeGİRİŞYAP() {
         Assert.assertEquals("GİRİŞ YAP",movita.girisYap.getText());
     }
+
+/*
+*  huseyinKartal
+*  SmokeTest_US_MAT-127-Report_Modules
+* */
+    @Given("user navigates to login page")
+    public void userNavigatesToLoginPage() {
+      Driver.getDriver().get(ConfigurationReader.getProperty("loginPage"));
+    }
+
+    @When("user logins the page")
+    public void userLoginsThePage() {
+        movita.username.sendKeys(ConfigurationReader.getProperty("ValidUserName"), Keys.TAB,ConfigurationReader.getProperty("ValidPassword"),Keys.ENTER);
+    }
+
+
+    @And("click on Raporlar")
+    public void clickOnRaporlar() {
+        waitForVisibility(movita.menuRaporlar,5).click();
+    }
+
+    @And("click on Araç Bazlı Rapor")
+    public void clickOnAraçBazlıRapor() {
+        waitForVisibility(movita.menuAracBazliRapor,5).click();
+
+    }
+
+    @Then("click  on Rapor al")
+    public void clickOnRaporAl() {
+        String expectedURL=Driver.getDriver().getCurrentUrl();
+        waitForVisibility(movita.menuRaporAlButton,5).click();
+        assertNotEquals(Driver.getDriver().getCurrentUrl(), expectedURL);
+    }
+
+    @And("click on Yakıt Entegrasyon Raporu")
+    public void clickOnYakıtEntegrasyonRaporu() {
+        waitForVisibility(movita.menuYakitEntegrasyonRaporu,5).click();
+    }
+
+
+    @And("click on Günlük Seyehat")
+    public void clickOnGünlükSeyehat() {
+        waitForVisibility(movita.menuGunlukSeyahatRaporu,5).click();
+    }
+
+    @And("click on Aktivite Detay Raporu")
+    public void clickOnAktiviteDetayRaporu() {
+        waitForVisibility(movita.menuAktiviteDetayRaporu,5).click();
+    }
+    @And("click on Araç Karne")
+    public void clickOnAraçKarne() {
+        waitForVisibility(movita.menuAracKarneRaporu,5).click();
+    }
+    @And("click on Filo Bazlı Rapor")
+    public void clickOnFiloBazlıRapor() {
+        waitForVisibility(movita.menuFiloBazliRapor,5).click();
+    }
+    @And("click on Grup Bazlı Rapor")
+    public void clickOnGrupBazlıRapor() {
+        waitForVisibility(movita.menuGrupBazliRapor,5).click();
+    }
+
+    @And("click on Alarm Log Raporu")
+    public void clickOnAlarmLogRaporu() {
+        waitForVisibility(movita.menuAlarmLogRaporu,5).click();
+    }
+
+    @Then("click on Sorgula")
+    public void clickOnSorgula() {
+        waitForClickablility(movita.menuSorgulaButton,5);
+    }
+
+
+    @And("click on Şoför Log Raporu")
+    public void clickOnŞoförLogRaporu() {
+        waitForVisibility(movita.menuSoforLogRaporu,5).click();
+
+    }
+
+    @And("click on Sensör Raporu")
+    public void clickOnSensörRaporu() {
+        waitForVisibility(movita.menuSensorRaporu,5).click();
+
+    }
+/*
+    @Then("click on Rapor al")
+    public void clickOnRaporAl() {
+    }*/
+
+    /*
+     *  huseyinKartal
+     *  SmokeTest_US_MAT-127-Report_Modules
+     * END */
 }

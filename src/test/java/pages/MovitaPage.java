@@ -337,6 +337,55 @@ public class MovitaPage {
  public WebElement oncekiSonraki;
 
 
+ //SmokeTest_US_MAT-127-Report_Modules
+ //Login Page Menu - Reports Locators
+
+ @FindBy(xpath = ".//*[text()=\"Raporlar\"]")
+ public WebElement menuRaporlar;
+
+ @FindBy(xpath = ".//*[text()=\"Araç Bazlı Rapor\"]")
+ public WebElement menuAracBazliRapor;
+
+
+ @FindBy(css = "div.btn")
+ public WebElement menuRaporAlButton;
+
+ @FindBy(xpath = ".//*[text()=\"Yakıt Entegrasyon Raporu\"]")
+ public WebElement menuYakitEntegrasyonRaporu;
+
+ @FindBy(xpath = ".//*[text()=\"Günlük Seyehat Raporu\"]")
+ public WebElement menuGunlukSeyahatRaporu;
+
+ @FindBy(xpath = ".//*[text()=\"Aktivite Detay Raporu\"]")
+ public WebElement menuAktiviteDetayRaporu;
+
+ @FindBy(xpath = ".//*[text()=\"Araç Karne\"]")
+ public WebElement menuAracKarneRaporu;
+
+ @FindBy(xpath = ".//*[text()=\"Filo Bazlı Rapor\"]")
+ public WebElement menuFiloBazliRapor;
+
+ @FindBy(xpath = ".//*[text()=\"Grup Bazlı Rapor\"]")
+ public WebElement menuGrupBazliRapor;
+
+ @FindBy(xpath = ".//*[text()=\"Alarm Log Raporu\"]")
+ public WebElement menuAlarmLogRaporu;
+
+ @FindBy(css = "button.btn")
+ public WebElement menuSorgulaButton;
+
+ @FindBy(xpath = ".//*[text()=\"Şoför Log Raporu\"]")
+ public WebElement menuSoforLogRaporu;
+
+
+ @FindBy(xpath = ".//*[text()=\"Sensör Log Raporu\"]")
+ public WebElement menuSensorRaporu;
+
+
+
+
+
+
 
 
 }
