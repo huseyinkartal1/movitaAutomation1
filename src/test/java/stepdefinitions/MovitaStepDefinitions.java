@@ -8,7 +8,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
@@ -839,4 +841,130 @@ public class MovitaStepDefinitions {
     }
 
 
+    // Alkan Tuncer --- US_MAT-2 --- TC_MAT-44 to MAT-48
+    @When("Movita Logo should be clickable")
+    public void movitaLogoShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.movitaLogo,5);
+    }
+
+    @Then("User click to logo")
+    public void userClickToLogo() {
+        ReusableMethods.waitForVisibility(movita.movitaLogo,3).click();
+    }
+
+    @And("User verify Mobil Vasıta İzleme Takip Sistemi displayed")
+    public void userVerifyMobilVasıtaİzlemeTakipSistemiDisplayed() {
+        ReusableMethods.waitForVisibility(movita.mainTextTurkish, 3);
+        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
+    }
+
+    @When("User hover over “ROTA OPTIMIZASYONU“")
+    public void userHoverOverROTAOPTIMIZASYONU() {
+        ReusableMethods.hover(movita.rotaOptimizasyonu);
+    }
+
+    @Then("“ROTA OPTIMIZASYONU“ should be clickable")
+    public void rotaOPTIMIZASYONUShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.rotaOptimizasyonu,2);
+    }
+
+    @Then("User verify “ROTA OPTIMIZASYONU“ text color change")
+    public void userVerifyROTAOPTIMIZASYONUTextColorChange() {
+        String s = movita.rotaOptimizasyonu.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “ROTA OPTIMIZASYONU“")
+    public void textSholdBeROTAOPTIMIZASYONU() {
+        Assert.assertEquals("ROTA OPTIMIZASYONU",movita.rotaOptimizasyonu.getText());
+    }
+
+    @When("User hover over “UYGULAMALAR“")
+    public void userHoverOverUYGULAMALAR() {
+        ReusableMethods.hover(movita.uygulamalar);
+    }
+
+    @Then("“UYGULAMALAR“ should be clickable")
+    public void uygulamalarShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.uygulamalar,2);
+    }
+
+    @Then("User verify “UYGULAMALAR“ text color change")
+    public void userVerifyUYGULAMALARTextColorChange() {
+        String s = movita.uygulamalar.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “UYGULAMALAR“")
+    public void textSholdBeUYGULAMALAR() {
+        Assert.assertEquals("UYGULAMALAR",movita.uygulamalar.getText());
+    }
+
+    @When("User hover over “KILAVUZ“")
+    public void userHoverOverKILAVUZ() {
+        ReusableMethods.hover(movita.kilavuz);
+    }
+
+    @Then("“KILAVUZ“ should be clickable")
+    public void kilavuzShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.kilavuz,2);
+    }
+
+    @Then("User verify “KILAVUZ“ text color change")
+    public void userVerifyKILAVUZTextColorChange() {
+        String s = movita.kilavuz.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “KILAVUZ“")
+    public void textSholdBeKILAVUZ() {
+        Assert.assertEquals("KILAVUZ",movita.kilavuz.getText());
+    }
+
+    @When("User hover over “İLETİŞİM“")
+    public void userHoverOverİLETİŞİM() {
+        ReusableMethods.hover(movita.iletisim);
+    }
+
+    @Then("“İLETİŞİM“ should be clickable")
+    public void i̇leti̇şi̇mShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.iletisim,2);
+    }
+
+    @Then("User verify “İLETİŞİM“ text color change")
+    public void userVerifyİLETİŞİMTextColorChange() {
+        String s = movita.iletisim.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “İLETİŞİM“")
+    public void textSholdBeİLETİŞİM() {
+        Assert.assertEquals("İLETİŞİM",movita.iletisim.getText());
+    }
+
+    @When("User hover over “GİRİŞ YAP“")
+    public void userHoverOverGİRİŞYAP() {
+        ReusableMethods.hover(movita.girisYap);
+    }
+
+    @Then("“GİRİŞ YAP“ should be clickable")
+    public void gi̇ri̇şYAPShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.girisYap,2);
+    }
+
+    @Then("User verify “GİRİŞ YAP“ text color change")
+    public void userVerifyGİRİŞYAPTextColorChange() {
+        String s = movita.girisYap.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “GİRİŞ YAP“")
+    public void textSholdBeGİRİŞYAP() {
+        Assert.assertEquals("GİRİŞ YAP",movita.girisYap.getText());
+    }
 }
