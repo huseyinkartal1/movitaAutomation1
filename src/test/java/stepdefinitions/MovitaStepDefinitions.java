@@ -8,16 +8,18 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import java.util.*;
-
-import static org.junit.Assert.*;
 
 
 public class MovitaStepDefinitions {
@@ -834,105 +836,135 @@ public class MovitaStepDefinitions {
     }
     @Then("login page should be opened")
     public void loginPageShouldBeOpened() {
+
        assertTrue(movita.secondGirisYap.isDisplayed());
     }
 
 
-    @And("user clicks Raporlar button")
-    public void userClicksRaporlarButton() {
-        movita.menu.click();
-        movita.raporlar.click();
+    // Alkan Tuncer --- US_MAT-2 --- TC_MAT-44 to MAT-48
+    @When("Movita Logo should be clickable")
+    public void movitaLogoShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.movitaLogo,5);
     }
 
-    @Then("user clicks Araç Bazlı Rapor button")
-    public void userClicksAraçBazlıRaporButton() {
-        movita.aracBazliRapor.click();
+    @Then("User click to logo")
+    public void userClickToLogo() {
+        ReusableMethods.waitForVisibility(movita.movitaLogo,3).click();
     }
 
-    @And("two blogs should be opened on the ‘Araç Bazlı Rapor’ page")
-    public void twoBlogsShouldBeOpenedOnTheAraçBazlıRaporPage() {
-        assertTrue(movita.leftBlog.isDisplayed());
-        assertTrue(movita.rightBlog.isDisplayed());
+    @And("User verify Mobil Vasıta İzleme Takip Sistemi displayed")
+    public void userVerifyMobilVasıtaİzlemeTakipSistemiDisplayed() {
+        ReusableMethods.waitForVisibility(movita.mainTextTurkish, 3);
+        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
     }
 
-    @Then("Arac dropdown should be displayed on the left blog")
-    public void aracDropdownShouldBeDisplayedOnTheLeftBlog() {
-        assertTrue(movita.aracDropdown.isDisplayed());
+    @When("User hover over “ROTA OPTIMIZASYONU“")
+    public void userHoverOverROTAOPTIMIZASYONU() {
+        ReusableMethods.hover(movita.rotaOptimizasyonu);
     }
 
-    @Then("‘Başlangıç Tarihi’ dropdown should be displayed on the left blog")
-    public void başlangıçTarihiDropdownShouldBeDisplayedOnTheLeftBlog() {
-        assertTrue(movita.baslangicTarihi.isDisplayed());
-    }
-    @Then("Bitiş Tarihi dropdown should be displayed on the left blog")
-    public void bitişTarihiDropdownShouldBeDisplayedOnTheLeftBlog() {
-        assertTrue(movita.bitisTarihi.isDisplayed());
+    @Then("“ROTA OPTIMIZASYONU“ should be clickable")
+    public void rotaOPTIMIZASYONUShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.rotaOptimizasyonu,2);
     }
 
-    @Then("Rapor Al dropdown should be displayed on the left blog")
-    public void raporAlDropdownShouldBeDisplayedOnTheLeftBlog() {
-        assertTrue(movita.raporAl.isDisplayed());
-    }
-    @Then("Detaylı Arama,excel,pdf and print buttons are displayed on the right blog")
-    public void detaylıAramaExcelPdfAndPrintButtonsAreDisplayedOnTheRightBlog() {
-        assertTrue(movita.detayliAra.isDisplayed());
-        assertTrue(movita.excelButton.isDisplayed());
-        assertTrue(movita.pdfButton.isDisplayed());
-        assertTrue(movita.printButton.isDisplayed());
+    @Then("User verify “ROTA OPTIMIZASYONU“ text color change")
+    public void userVerifyROTAOPTIMIZASYONUTextColorChange() {
+        String s = movita.rotaOptimizasyonu.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
     }
 
-    @Then("‘Bütün Kayıtlarda Ara’ search box is displayed on the right blog")
-    public void bütünKayıtlardaAraSearchBoxIsDisplayedOnTheRightBlog() {
-        assertTrue(movita.tumKayitlardaAra.isDisplayed());
+    @And("Text shold be “ROTA OPTIMIZASYONU“")
+    public void textSholdBeROTAOPTIMIZASYONU() {
+        Assert.assertEquals("ROTA OPTIMIZASYONU",movita.rotaOptimizasyonu.getText());
     }
 
-    @And("A graphical table below the buttons showing the results is displayed on the right blog")
-    public void aGraphicalTableBelowTheButtonsShowingTheResultsIsDisplayedOnTheRightBlog() {
-        assertTrue(movita.resultTable.isDisplayed());
+    @When("User hover over “UYGULAMALAR“")
+    public void userHoverOverUYGULAMALAR() {
+        ReusableMethods.hover(movita.uygulamalar);
     }
 
-    @Then("‘Rapor almak için sol tarafta tarih aralığı seçerek 'Rapor Al’ butonuna tıklayınız.’ text is displayed on the right blog")
-    public void raporAlmakIçinSolTaraftaTarihAralığıSeçerekRaporAlButonunaTıklayınızTextIsDisplayedOnTheRightBlog() {
-
-        String actText=movita.tableText.getText();
-        String expText="Rapor almak için sol tarafta tarih aralığı seçerek 'Rapor Al’ butonuna tıklayınız.";
-        assertFalse(actText.equals(expText));
+    @Then("“UYGULAMALAR“ should be clickable")
+    public void uygulamalarShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.uygulamalar,2);
     }
 
-    @Then("Heigths and bottoms should be the same of left blog and report blog on the right blog")
-    public void heigthsAndBottomsShouldBeTheSameOfLeftBlogAndReportBlogOnTheRightBlog() {
-        String leftBlogHeigth=movita.leftBlog.getCssValue("line-height");
-        String rightBlogHeigth=movita.rightBlog.getCssValue("line-height");
-        String leftBlogBottom=movita.leftBlog.getCssValue("min-height");
-        String rightBlogBottom=movita.rightBlog.getCssValue("min-height");
-
-        System.out.println("leftBlogHeigth = " + leftBlogHeigth);
-        System.out.println("rightBlogHeigth = " + rightBlogHeigth);
-        System.out.println("leftBlogBottom = " + leftBlogBottom);
-        System.out.println("rightBlogBottom = " + rightBlogBottom);
-
-        assertEquals(leftBlogHeigth,rightBlogHeigth);
-        assertEquals(leftBlogBottom,rightBlogBottom);
+    @Then("User verify “UYGULAMALAR“ text color change")
+    public void userVerifyUYGULAMALARTextColorChange() {
+        String s = movita.uygulamalar.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
     }
 
-    @And("‘Önceki' and ‘Sonraki’ buttons are enabled on the right blog")
-    public void öncekiAndSonrakiButtonsAreEnabledOnTheRightBlog() {
-        assertTrue(movita.oncekiSonraki.isDisplayed());
+    @And("Text shold be “UYGULAMALAR“")
+    public void textSholdBeUYGULAMALAR() {
+        Assert.assertEquals("UYGULAMALAR",movita.uygulamalar.getText());
     }
 
+    @When("User hover over “KILAVUZ“")
+    public void userHoverOverKILAVUZ() {
+        ReusableMethods.hover(movita.kilavuz);
+    }
 
-    @Then("user hovers over all buttons")
-    public void userHoversOverAllButtons() {
-        ReusableMethods.hover(movita.aracDropdown);
-        ReusableMethods.hover(movita.baslangicTarihi);
-        ReusableMethods.hover(movita.bitisTarihi);
-        ReusableMethods.hover(movita.raporAl);
-        ReusableMethods.hover(movita.excelButton);
-        ReusableMethods.hover(movita.pdfButton);
-        ReusableMethods.hover(movita.printButton);
-        ReusableMethods.hover(movita.detayliAra);
-        ReusableMethods.hover(movita.tumKayitlardaAra);
-        ReusableMethods.hover(movita.resultTable);
-        ReusableMethods.hover(movita.oncekiSonraki);
+    @Then("“KILAVUZ“ should be clickable")
+    public void kilavuzShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.kilavuz,2);
+    }
+
+    @Then("User verify “KILAVUZ“ text color change")
+    public void userVerifyKILAVUZTextColorChange() {
+        String s = movita.kilavuz.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “KILAVUZ“")
+    public void textSholdBeKILAVUZ() {
+        Assert.assertEquals("KILAVUZ",movita.kilavuz.getText());
+    }
+
+    @When("User hover over “İLETİŞİM“")
+    public void userHoverOverİLETİŞİM() {
+        ReusableMethods.hover(movita.iletisim);
+    }
+
+    @Then("“İLETİŞİM“ should be clickable")
+    public void i̇leti̇şi̇mShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.iletisim,2);
+    }
+
+    @Then("User verify “İLETİŞİM“ text color change")
+    public void userVerifyİLETİŞİMTextColorChange() {
+        String s = movita.iletisim.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “İLETİŞİM“")
+    public void textSholdBeİLETİŞİM() {
+        Assert.assertEquals("İLETİŞİM",movita.iletisim.getText());
+    }
+
+    @When("User hover over “GİRİŞ YAP“")
+    public void userHoverOverGİRİŞYAP() {
+        ReusableMethods.hover(movita.girisYap);
+    }
+
+    @Then("“GİRİŞ YAP“ should be clickable")
+    public void gi̇ri̇şYAPShouldBeClickable() {
+        ReusableMethods.waitForClickablility(movita.girisYap,2);
+    }
+
+    @Then("User verify “GİRİŞ YAP“ text color change")
+    public void userVerifyGİRİŞYAPTextColorChange() {
+        String s = movita.girisYap.getCssValue("color");
+        String c = Color.fromString(s).asHex();
+        Assert.assertEquals("#00adee", c);
+    }
+
+    @And("Text shold be “GİRİŞ YAP“")
+    public void textSholdBeGİRİŞYAP() {
+        Assert.assertEquals("GİRİŞ YAP",movita.girisYap.getText());
     }
 }
