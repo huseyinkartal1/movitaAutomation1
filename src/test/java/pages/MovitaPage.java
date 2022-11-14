@@ -285,4 +285,58 @@ public class MovitaPage {
  @FindBy(xpath = "//div[@class=\"col-md-6 text-center text-md-start\"]")
  public WebElement copyrightText;
 
+ @FindBy(xpath = "(//li[@class=\"nav-item has-sub\"])[1]")
+ public WebElement raporlar;
+
+ @FindBy(xpath = "//i[@class=\"ft-menu\"]")
+ public WebElement menu;
+
+ @FindBy(xpath = "//li[@id=\"arac_bazli_rpr\"]")
+ public WebElement aracBazliRapor;
+
+ @FindBy(xpath = "//div[@class=\"col-md-3\"]")
+ public WebElement leftBlog;
+
+ @FindBy(xpath = "//div[@class=\"col-md-9\"]")
+ public  WebElement rightBlog;
+
+ @FindBy(xpath = "//span[@id=\"select2-aracSelect-container\"]")
+ public WebElement aracDropdown;
+
+ @FindBy(xpath = "//input[@id=\"tarih1\"]")
+ public WebElement baslangicTarihi;
+
+ @FindBy(xpath = "//input[@id=\"tarih2\"]")
+ public WebElement bitisTarihi;
+
+ @FindBy(xpath = "//div[@class=\"btn border-info info tag-border\"]")
+ public WebElement raporAl;
+
+ @FindBy(xpath = "//a[@title=\"Excel Olarak İndir\"]")
+ public WebElement excelButton;
+
+ @FindBy(xpath = "//a[@title=\"Pdf Olarak İndir\"]")
+ public WebElement pdfButton;
+
+ @FindBy(xpath = "//a[@title=\"Yazıcıdan Çıkart\"]")
+ public WebElement printButton;
+
+ @FindBy(xpath = "//a[@aria-controls=\"accordion_filtre\"]")
+ public WebElement detayliAra;
+
+ @FindBy(xpath = "//input[@type=\"search\"]")
+ public WebElement tumKayitlardaAra;
+
+ @FindBy(xpath = "//table[@id=\"DataTables_Table_0\"]")
+ public WebElement resultTable;
+
+ @FindBy(xpath = "//td[@class=\"dataTables_empty\"]")
+ public WebElement tableText;
+
+ @FindBy(xpath = "//ul[@class=\"pagination\"]")
+ public WebElement oncekiSonraki;
+
+
+
+
 }
