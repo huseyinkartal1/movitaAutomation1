@@ -381,6 +381,85 @@ public class MovitaPage {
  @FindBy(xpath = ".//*[text()=\"Sensör Log Raporu\"]")
  public WebElement menuSensorRaporu;
 
+ //------TC-128------
+
+ @FindBy(xpath = "//*[.=\"GİRİŞ Yap\"]")
+ public WebElement girisYapFirst;
+
+ @FindBy(xpath = "//input[@id='username']")
+ public WebElement userName2;
+
+ @FindBy(xpath = "//input[@id='password']")
+ public WebElement passWord;
+
+ @FindBy(xpath = "//button[@type=\"submit\"]")
+ public WebElement girisYapSecond;
+
+ @FindBy(xpath = "//img[@id='ic-logo']")
+ public WebElement logoMainPage;
+
+ @FindBy (xpath = "//div[@class='main-menu menu-fixed menu-light menu-accordion menu-shadow']")
+ public WebElement allMenu;
+
+ @FindBy(xpath = "//div[@aria-label='Harita']")
+ public WebElement map;
+
+ @FindBy(xpath = "//div[@class='col-lg-2 col-md-2 text-xs-center']")
+ public WebElement vehicles;
+
+ @FindBy(xpath = "//li[@id='anasayfa']")
+ public WebElement anasayfa;
+
+ @FindBy(xpath = "//*[text()='Raporlar']")
+ public WebElement raporlar2;
+
+ @FindBy(xpath = "//*[text()='Araç Rota']")
+ public WebElement aracRota;
+
+ @FindBy(xpath = "//*[text()='Araç Video-Fotoğraf']  ")
+ public WebElement aracVideoFotograf;
+
+ @FindBy (xpath = "//*[text()='Güzergah İşlemleri']")
+ public WebElement guzergahIslemleri;
+
+ @FindBy(xpath = "//*[text()='Alarm İşlemleri']")
+ public WebElement alarmIslemleri;
+
+ @FindBy(xpath = "//*[text()='Rota İşlemleri']")
+ public WebElement rotaIslemleri;
+
+ @FindBy(xpath = "//*[text()='Personel İşlemleri']")
+ public WebElement personelIslemleri;
+
+ @FindBy(xpath = "//*[text()='Yönetim ve Ayarlar']")
+ public WebElement yonetimAyarlar;
+
+ @FindBy(xpath = "//li[@id='arac_bazli_rpr']")
+ public WebElement aracBazli;
+
+ @FindBy(xpath = "//li[@id='yakit_bazli_rpr']")
+ public WebElement yakitBazli;
+
+@FindBy(xpath = "//li[@id='arac_bazli_guzergah']")
+ public WebElement aracBazliGuzergah;
+
+@FindBy(xpath = "//li[@id='rota_optimizasyonu_oto']")
+ public WebElement optimizasyon;
+
+@FindBy(xpath = "//li[@id='personel_listesi']")
+ public WebElement personel;
+
+@FindBy(xpath = "//li[@id='filo_yonetim']")
+ public WebElement grupYonetimi;
+
+@FindBy(xpath = "//li[@id='arac_islem']")
+ public WebElement aracIslemleri;
+
+@FindBy(xpath = "//li[@class='nav-item has-sub open']")
+ public WebElement tumMenu;
+
+
+
 
  // Login Page - Login Button
  @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
