@@ -23,8 +23,23 @@ import java.util.*;
 
 public class MovitaLoginStepDefinition extends ReusableMethods {
 
-
     MovitaPage movita = new MovitaPage();
 
+    // Alkan Tuncer Smoke Test_Login Function US_MAT-133_TC_MAT-141
+    @Then("Enter username as {string} and password as {string}")
+    public void enterUsernameAsAndPasswordAs(String username, String password) {
+        movita.userName.sendKeys(ConfigurationReader.getProperty(username));
+        movita.password.sendKeys(ConfigurationReader.getProperty(password));
+    }
+
+    @Then("User click to login button")
+    public void userClickToLoginButton() {
+        movita.loginButton.click();
+    }
+
+    @Then("User must see their own dashboard")
+    public void userMustSeeTheirOwnDashboard() {
+        Assert.assertTrue(movita.raporlar.isDisplayed());
+    }
 
 }
