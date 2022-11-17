@@ -208,8 +208,8 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
 
     /**
-     *     huseyinKartal
-     *     US_MAT11-TC_MAT100_Main Page First Section_Hover_Over_Menu
+     * huseyinKartal
+     * US_MAT11-TC_MAT100_Main Page First Section_Hover_Over_Menu
      */
 
     @Given("Hover over “ROTA OPTIMIZASYONU”")
@@ -315,24 +315,25 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("Verify writing “Giriş Yap”")
     public void verifyWritingGirişYap() {
-        Assert.assertEquals("Giriş Yap",movita.girisYapButton.getText());
+        Assert.assertEquals("Giriş Yap", movita.girisYapButton.getText());
     }
 
 
-
     /**
-     *     huseyinKartal
-     *     TC_MAT121_Şifrenizi mi Unuttunuz
+     * huseyinKartal
+     * TC_MAT121_Şifrenizi mi Unuttunuz
      */
 
     @Given("Click on “Giriş Yap”")
     public void click_on_giriş_yap() {
         movita.girisYap1.click();
     }
+
     @Given("Click on \"Şifrenizi mi unuttunuz?\"")
     public void click_on_forgotPassword() {
         movita.forgotPassword.click();
     }
+
     @Given("Click on “Şifre Değiştir” button")
     public void click_on_changePassword() {
         movita.changePassword.click();
@@ -345,23 +346,27 @@ public class MovitaStepDefinitions extends ReusableMethods {
         movita.phoneNumber.sendKeys(map.get("phoneNumber"));
 
     }
+
     @And("Verify none credentials")
     public void Verify_none_credentials() {
         String expected = "Lütfen kullanıcı adınızı veya telefon numaranızı doğru girdiğinizden emin olunuz.";
         String actual1 = "Lütfen kullanıcı adınızı girdiğinizden emin olun!";
         Assert.assertEquals(expected, movita.noneCredentials.getText());
     }
+
     @And("Verify valid username")
     public void valid_username() {
         String expected = "Lütfen kullanıcı adınızı veya telefon numaranızı doğru girdiğinizden emin olunuz.";
         String actual1 = "Telefon Bilgisi Doğru Değildir. Şifreniz Değiştirilmemiştir";
 
-      Assert.assertEquals(expected, movita.toastMessage.getText());
+        Assert.assertEquals(expected, movita.toastMessage.getText());
     }
+
     @And("Verify valid phoneNumber")
     public void valid_phoneNumber() {
         //DONT HAVE VALID PHONE NUMBER
     }
+
     @Given("user login movita page")
     public void user_login_movita_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("movita"));
@@ -370,16 +375,16 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @Then("user verifies NEDEN TAKİP SİSTEMİ text")
     public void userVerifiesNEDENTAKİPSİSTEMİText() {
         ReusableMethods.hover(movita.thirdSectionBody);
-        String bodyText=movita.thirdSectionBody.getText();
-        String takipText=movita.nedenTakipSistemi.getText();
+        String bodyText = movita.thirdSectionBody.getText();
+        String takipText = movita.nedenTakipSistemi.getText();
         assertTrue(bodyText.contains(takipText));
     }
 
     @Then("user verifies TSE BELGELİ CİHAZLAR text")
     public void userVerifiesTSEBELGELİCİHAZLARText() {
         ReusableMethods.hover(movita.thirdSectionBody);
-        String bodyText=movita.thirdSectionBody.getText();
-        String tseText=movita.TSEBelgeseliCihazlar.getText();
+        String bodyText = movita.thirdSectionBody.getText();
+        String tseText = movita.TSEBelgeseliCihazlar.getText();
         assertTrue(bodyText.contains(tseText));
     }
 
@@ -422,9 +427,9 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @Then("when user hovers over arrow sign,")
     public void whenUserHoversOverArrowSign() {
         ReusableMethods.hover(movita.thirdSectionBody);
-        String firstcolor=movita.arrowsign.getCssValue("background-color");
+        String firstcolor = movita.arrowsign.getCssValue("background-color");
         ReusableMethods.hover(movita.arrowsign);
-        String secondColor=movita.arrowsign.getCssValue("background-color");
+        String secondColor = movita.arrowsign.getCssValue("background-color");
         System.out.println("firstcolor = " + firstcolor);
         System.out.println("secondColor = " + secondColor);
     }
@@ -441,10 +446,11 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("Tüm Sektörlere Hitap Eden Cozumler text is should be displayed")
     public void tümSektörlereHitapEdenCozumlerTextIsShouldBeDisplayed() {
-        ReusableMethods.waitForVisibility(movita.tumSektorlerText,10);
+        ReusableMethods.waitForVisibility(movita.tumSektorlerText, 10);
         assertTrue(movita.tumSektorlerText.isDisplayed());
 
     }
+
     @Given("kullanıcı movita sayfasına gider")
     public void kullanıcıMovitaSayfasınaGider() {
         Driver.getDriver().get("https://movita.com.tr/");
@@ -457,7 +463,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("Mobil Vasita izleme takip Sistemi yazısı ekranda görünür")
     public void mobilVasitaIzlemeTakipSistemiYazısıEkrandaGörünür() {
-        ReusableMethods.waitForVisibility(movita.mobilText,2);
+        ReusableMethods.waitForVisibility(movita.mobilText, 2);
         Assert.assertTrue(movita.mobilText.isDisplayed());
     }
 
@@ -465,12 +471,13 @@ public class MovitaStepDefinitions extends ReusableMethods {
     public void userClicksOnDropdownButton() {
         movita.dropdown.click();
     }
+
     @Then("English item is selected after clicking, text of Mobile Vehicle Tracking System should be displayed on the screen.")
     public void english_item_is_selected_after_clicking_text_of_mobile_vehicle_tracking_system_should_be_displayed_on_the_screen() {
         movita.eng.click();
-        ReusableMethods.waitForVisibility(movita.engPano,2);
-        String expText="Vehicle";
-        String actText=movita.body.getText();
+        ReusableMethods.waitForVisibility(movita.engPano, 2);
+        String expText = "Vehicle";
+        String actText = movita.body.getText();
         Assert.assertTrue(actText.contains(expText));
 
     }
@@ -480,18 +487,18 @@ public class MovitaStepDefinitions extends ReusableMethods {
         movita.dropdown.click();
         movita.turk.click();
         ReusableMethods.waitFor(2);
-        String expText="Vasıta";
-        String actText=movita.body.getText();
+        String expText = "Vasıta";
+        String actText = movita.body.getText();
         Assert.assertTrue(actText.contains(expText));
 
     }
 
     @Given("user moves mouse cursor over  ROTA OPTİMİZASYONU")
     public void userMovesMouseCursorOverROTAOPTİMİZASYONU() {
-        String ilkRenk=movita.rota.getCssValue("color");
+        String ilkRenk = movita.rota.getCssValue("color");
         System.out.println("ilkRenk = " + ilkRenk);
         ReusableMethods.hover(movita.rota);
-        String ikinciRenk=movita.rota.getCssValue("color");
+        String ikinciRenk = movita.rota.getCssValue("color");
         System.out.println("ikinciRenk = " + ikinciRenk);
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
@@ -509,15 +516,15 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("when ROTA OPTİMİZASYONU is clicked, the text of ROTA OPTİMİZASYONU should be displayed on the screen.")
     public void whenROTAOPTİMİZASYONUIsClickedTheTextOfROTAOPTİMİZASYONUShouldBeDisplayedOnTheScreen() {
-        String rotaoptText=movita.rotaText.getText();
+        String rotaoptText = movita.rotaText.getText();
         Assert.assertTrue(movita.rotaText.isDisplayed());
     }
 
     @Given("Given user moves mouse cursor over  Uygulamalar OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverUygulamalarOPTİMİZASYONU() {
-        String ilkRenk=movita.uygulamalar1.getCssValue("color");
+        String ilkRenk = movita.uygulamalar1.getCssValue("color");
         ReusableMethods.hover(movita.uygulamalar1);
-        String ikinciRenk=movita.uygulamalar1.getCssValue("color");
+        String ikinciRenk = movita.uygulamalar1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -538,9 +545,9 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Given("Given user moves mouse cursor over  Kılavuz OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverKılavuzOPTİMİZASYONU() {
-        String ilkRenk=movita.kilavuz1.getCssValue("color");
+        String ilkRenk = movita.kilavuz1.getCssValue("color");
         ReusableMethods.hover(movita.kilavuz1);
-        String ikinciRenk=movita.kilavuz1.getCssValue("color");
+        String ikinciRenk = movita.kilavuz1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -554,6 +561,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
         movita.kilavuz1.click();
 
     }
+
     @And("when Uygulamalar OPTİMİZASYONU is clicked, the text of Kılavuz OPTİMİZASYONU should be displayed on the screen.")
     public void whenUygulamalarOPTİMİZASYONUIsClickedTheTextOfKılavuzOPTİMİZASYONUShouldBeDisplayedOnTheScreen() {
         Assert.assertTrue(movita.kilavuzText.isDisplayed());
@@ -561,9 +569,9 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Given("Given user moves mouse cursor over ILETISIM OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverILETISIMOPTİMİZASYONU() {
-        String ilkRenk=movita.kilavuz1.getCssValue("color");
+        String ilkRenk = movita.kilavuz1.getCssValue("color");
         ReusableMethods.hover(movita.iletisim1);
-        String ikinciRenk=movita.iletisim1.getCssValue("color");
+        String ikinciRenk = movita.iletisim1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -583,9 +591,9 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Given("Given user moves mouse cursor over  GIRIS YAP OPTİMİZASYONU")
     public void givenUserMovesMouseCursorOverGIRISYAPOPTİMİZASYONU() {
-        String ilkRenk=movita.girisYap1.getCssValue("color");
+        String ilkRenk = movita.girisYap1.getCssValue("color");
         ReusableMethods.hover(movita.girisYap1);
-        String ikinciRenk=movita.girisYap1.getCssValue("color");
+        String ikinciRenk = movita.girisYap1.getCssValue("color");
         Assert.assertFalse(ilkRenk.equals(ikinciRenk));
     }
 
@@ -600,16 +608,16 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("when GIRIS YAP OPTİMİZASYONU is clicked, the text of Kılavuz OPTİMİZASYONU should be displayed on the screen.")
     public void whenGIRISYAPOPTİMİZASYONUIsClickedTheTextOfKılavuzOPTİMİZASYONUShouldBeDisplayedOnTheScreen() {
-        String actText=movita.girisYapText.getText();
-        String expText="Giriş";
+        String actText = movita.girisYapText.getText();
+        String expText = "Giriş";
         Assert.assertTrue(actText.contains(expText));
     }
 
     @Then("Bayilik Basvurusuna hover over yapılır")
     public void bayilikBasvurusunaHoverOverYapılır() {
-        String ilkRenk=movita.bayilik.getCssValue("color");
+        String ilkRenk = movita.bayilik.getCssValue("color");
         ReusableMethods.hover(movita.bayilik);
-        String ikiRenk=movita.body.getCssValue("color");
+        String ikiRenk = movita.body.getCssValue("color");
         System.out.println("ilkRenk = " + ilkRenk);
         System.out.println("ikiRenk = " + ikiRenk);
         Assert.assertFalse(ilkRenk.equals(ikiRenk));
@@ -632,9 +640,9 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("Demo başvurusuna hover over yapılır ve renk değişikliği olmaz")
     public void demoBaşvurusunaHoverOverYapılırVeRenkDeğişikliğiOlmaz() {
-        String ilkRenk=movita.demo.getCssValue("color");
+        String ilkRenk = movita.demo.getCssValue("color");
         ReusableMethods.hover(movita.demo);
-        String ikiRenk=movita.demo.getCssValue("color");
+        String ikiRenk = movita.demo.getCssValue("color");
         System.out.println("ilkRenk = " + ilkRenk);
         System.out.println("ikiRenk = " + ikiRenk);
         Assert.assertTrue(ilkRenk.equals(ikiRenk));
@@ -654,9 +662,9 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @Then("ARROW SIGN a hover over yapılır ve renk değişikliği olur")
     public void arrowSIGNAHoverOverYapılırVeRenkDeğişikliğiOlur() {
         ReusableMethods.hover(movita.demo);
-        String ilkRenk=movita.arrow.getCssValue("background-color");
+        String ilkRenk = movita.arrow.getCssValue("background-color");
         ReusableMethods.hover(movita.arrow);
-        String ikiRenk=movita.arrow.getCssValue("background-color");
+        String ikiRenk = movita.arrow.getCssValue("background-color");
         System.out.println("ilkRenk = " + ilkRenk);
         System.out.println("ikiRenk = " + ikiRenk);
         Assert.assertFalse(ilkRenk.equals(ikiRenk));
@@ -699,7 +707,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @Then("user verifies that ‘Lütfen kullanıcı adınızı veya şifrenizi doğru girdiğinizden emin olunuz.’ text should be displayed")
     public void userVerifiesThatLütfenKullanıcıAdınızıVeyaŞifreniziDoğruGirdiğinizdenEminOlunuzTextShouldBeDisplayed() {
 
-        String warning=movita.bodyLogin.getText();
+        String warning = movita.bodyLogin.getText();
         assertTrue(warning.contains("HATA!"));
     }
 
@@ -750,7 +758,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("user clicks Şifrenizi mi unuttunuz? text")
     public void userClicksŞifreniziMiUnuttunuzText() {
-            movita.sifrenimiUnuttun.click();
+        movita.sifrenimiUnuttun.click();
     }
 
     @Then("username box and telephone box should be enabled")
@@ -781,16 +789,16 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("User hovers over Giriş Ekranı link")
     public void userHoversOverGirişEkranıLink() {
-       // ReusableMethods.hover(movita.girisEkrani);
+        // ReusableMethods.hover(movita.girisEkrani);
     }
 
     @Then("Color of  Giriş Ekranı link’s  text should be green from blue")
     public void colorOfGirişEkranıLinkSTextShouldBeGreenFromBlue() {
         //ReusableMethods.hover(movita.sifreDegistir);
-        String firstColor=movita.girisEkrani.getCssValue("color");
+        String firstColor = movita.girisEkrani.getCssValue("color");
 
         ReusableMethods.hover(movita.girisEkrani);
-        String secondColor=movita.girisEkrani.getCssValue("color");
+        String secondColor = movita.girisEkrani.getCssValue("color");
         System.out.println("firstColor = " + firstColor);
         System.out.println("secondColor = " + secondColor);
         assertFalse(firstColor.equals(secondColor));
@@ -804,7 +812,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("Anasayfaya don text is displayed")
     public void anasayfayaDonTextIsDisplayed() {
-        String anasayfayadon=movita.anaSayfayaDon.getText();
+        String anasayfayadon = movita.anaSayfayaDon.getText();
         System.out.println("anasayfayadon = " + anasayfayadon);
         assertTrue(movita.anaSayfayaDon.isDisplayed());
     }
@@ -828,7 +836,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("user navigates to back for opening giris ekrani")
     public void userNavigatesToBackForOpeningGirisEkrani() {
-      Driver.getDriver().navigate().to("https://movita.com.tr/recover_password");
+        Driver.getDriver().navigate().to("https://movita.com.tr/recover_password");
 
     }
 
@@ -836,22 +844,23 @@ public class MovitaStepDefinitions extends ReusableMethods {
     public void userClicksGirişEkranıLinkAgain() {
         movita.girisEkrani.click();
     }
+
     @Then("login page should be opened")
     public void loginPageShouldBeOpened() {
 
-       assertTrue(movita.secondGirisYap.isDisplayed());
+        assertTrue(movita.secondGirisYap.isDisplayed());
     }
 
 
     // Alkan Tuncer --- US_MAT-2 --- TC_MAT-44 to MAT-48
     @When("Movita Logo should be clickable")
     public void movitaLogoShouldBeClickable() {
-        ReusableMethods.waitForClickablility(movita.movitaLogo,5);
+        ReusableMethods.waitForClickablility(movita.movitaLogo, 5);
     }
 
     @Then("User click to logo")
     public void userClickToLogo() {
-        ReusableMethods.waitForVisibility(movita.movitaLogo,3).click();
+        ReusableMethods.waitForVisibility(movita.movitaLogo, 3).click();
     }
 
     @And("User verify Mobil Vasıta İzleme Takip Sistemi displayed")
@@ -867,7 +876,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("“ROTA OPTIMIZASYONU“ should be clickable")
     public void rotaOPTIMIZASYONUShouldBeClickable() {
-        ReusableMethods.waitForClickablility(movita.rotaOptimizasyonu,2);
+        ReusableMethods.waitForClickablility(movita.rotaOptimizasyonu, 2);
     }
 
     @Then("User verify “ROTA OPTIMIZASYONU“ text color change")
@@ -879,7 +888,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("Text shold be “ROTA OPTIMIZASYONU“")
     public void textSholdBeROTAOPTIMIZASYONU() {
-        Assert.assertEquals("ROTA OPTIMIZASYONU",movita.rotaOptimizasyonu.getText());
+        Assert.assertEquals("ROTA OPTIMIZASYONU", movita.rotaOptimizasyonu.getText());
     }
 
     @When("User hover over “UYGULAMALAR“")
@@ -889,7 +898,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("“UYGULAMALAR“ should be clickable")
     public void uygulamalarShouldBeClickable() {
-        ReusableMethods.waitForClickablility(movita.uygulamalar,2);
+        ReusableMethods.waitForClickablility(movita.uygulamalar, 2);
     }
 
     @Then("User verify “UYGULAMALAR“ text color change")
@@ -901,7 +910,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("Text shold be “UYGULAMALAR“")
     public void textSholdBeUYGULAMALAR() {
-        Assert.assertEquals("UYGULAMALAR",movita.uygulamalar.getText());
+        Assert.assertEquals("UYGULAMALAR", movita.uygulamalar.getText());
     }
 
     @When("User hover over “KILAVUZ“")
@@ -911,7 +920,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("“KILAVUZ“ should be clickable")
     public void kilavuzShouldBeClickable() {
-        ReusableMethods.waitForClickablility(movita.kilavuz,2);
+        ReusableMethods.waitForClickablility(movita.kilavuz, 2);
     }
 
     @Then("User verify “KILAVUZ“ text color change")
@@ -923,7 +932,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("Text shold be “KILAVUZ“")
     public void textSholdBeKILAVUZ() {
-        Assert.assertEquals("KILAVUZ",movita.kilavuz.getText());
+        Assert.assertEquals("KILAVUZ", movita.kilavuz.getText());
     }
 
     @When("User hover over “İLETİŞİM“")
@@ -933,7 +942,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("“İLETİŞİM“ should be clickable")
     public void i̇leti̇şi̇mShouldBeClickable() {
-        ReusableMethods.waitForClickablility(movita.iletisim,2);
+        ReusableMethods.waitForClickablility(movita.iletisim, 2);
     }
 
     @Then("User verify “İLETİŞİM“ text color change")
@@ -945,7 +954,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("Text shold be “İLETİŞİM“")
     public void textSholdBeİLETİŞİM() {
-        Assert.assertEquals("İLETİŞİM",movita.iletisim.getText());
+        Assert.assertEquals("İLETİŞİM", movita.iletisim.getText());
     }
 
     @When("User hover over “GİRİŞ YAP“")
@@ -955,7 +964,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("“GİRİŞ YAP“ should be clickable")
     public void gi̇ri̇şYAPShouldBeClickable() {
-        ReusableMethods.waitForClickablility(movita.girisYap,2);
+        ReusableMethods.waitForClickablility(movita.girisYap, 2);
     }
 
     @Then("User verify “GİRİŞ YAP“ text color change")
@@ -967,92 +976,100 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @And("Text shold be “GİRİŞ YAP“")
     public void textSholdBeGİRİŞYAP() {
-        Assert.assertEquals("GİRİŞ YAP",movita.girisYap.getText());
+        Assert.assertEquals("GİRİŞ YAP", movita.girisYap.getText());
     }
 
-/*
-*  huseyinKartal
-*  SmokeTest_US_MAT-127-Report_Modules
-* */
+    /*
+     *  huseyinKartal
+     *  SmokeTest_US_MAT-127-Report_Modules
+     * */
     @Given("user navigates to login page")
     public void userNavigatesToLoginPage() {
-      Driver.getDriver().get(ConfigurationReader.getProperty("loginPage"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("loginPage"));
     }
 
     @When("user logins the page")
     public void userLoginsThePage() {
-        movita.username.sendKeys(ConfigurationReader.getProperty("ValidUserName"), Keys.TAB,ConfigurationReader.getProperty("ValidPassword"),Keys.ENTER);
+        movita.username.sendKeys(ConfigurationReader.getProperty("ValidUserName"), Keys.TAB, ConfigurationReader.getProperty("ValidPassword"), Keys.ENTER);
     }
 
 
     @And("click on Raporlar")
     public void clickOnRaporlar() {
-        waitForVisibility(movita.menuRaporlar,5).click();
+        waitForVisibility(movita.menuRaporlar, 5).click();
     }
 
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() {
-        waitForVisibility(movita.menuAracBazliRapor,5).click();
+        waitForVisibility(movita.menuAracBazliRapor, 5).click();
 
     }
 
     @Then("click  on Rapor al")
     public void clickOnRaporAl() {
-        String expectedURL=Driver.getDriver().getCurrentUrl();
-        waitForVisibility(movita.menuRaporAlButton,5).click();
+        String expectedURL = Driver.getDriver().getCurrentUrl();
+        waitForVisibility(movita.menuRaporAlButton, 5).click();
         assertNotEquals(Driver.getDriver().getCurrentUrl(), expectedURL);
     }
 
     @And("click on Yakıt Entegrasyon Raporu")
     public void clickOnYakıtEntegrasyonRaporu() {
-        waitForVisibility(movita.menuYakitEntegrasyonRaporu,5).click();
+        waitForVisibility(movita.menuYakitEntegrasyonRaporu, 5).click();
     }
 
 
     @And("click on Günlük Seyehat")
     public void clickOnGünlükSeyehat() {
-        waitForVisibility(movita.menuGunlukSeyahatRaporu,5).click();
+        waitForVisibility(movita.menuGunlukSeyahatRaporu, 5).click();
     }
 
     @And("click on Aktivite Detay Raporu")
     public void clickOnAktiviteDetayRaporu() {
-        waitForVisibility(movita.menuAktiviteDetayRaporu,5).click();
+        waitForVisibility(movita.menuAktiviteDetayRaporu, 5).click();
     }
+
     @And("click on Araç Karne")
     public void clickOnAraçKarne() {
-        waitForVisibility(movita.menuAracKarneRaporu,5).click();
+        waitForVisibility(movita.menuAracKarneRaporu, 5).click();
     }
+
     @And("click on Filo Bazlı Rapor")
     public void clickOnFiloBazlıRapor() {
-        waitForVisibility(movita.menuFiloBazliRapor,5).click();
+        waitForVisibility(movita.menuFiloBazliRapor, 5).click();
     }
+
     @And("click on Grup Bazlı Rapor")
     public void clickOnGrupBazlıRapor() {
-        waitForVisibility(movita.menuGrupBazliRapor,5).click();
+        waitForVisibility(movita.menuGrupBazliRapor, 5).click();
     }
 
     @And("click on Alarm Log Raporu")
     public void clickOnAlarmLogRaporu() {
-        waitForVisibility(movita.menuAlarmLogRaporu,5).click();
+        waitForVisibility(movita.menuAlarmLogRaporu, 5).click();
     }
 
     @Then("click on Sorgula")
     public void clickOnSorgula() {
-        waitForClickablility(movita.menuSorgulaButton,5);
+        waitForClickablility(movita.menuSorgulaButton, 5);
     }
 
 
     @And("click on Şoför Log Raporu")
     public void clickOnŞoförLogRaporu() {
-        waitForVisibility(movita.menuSoforLogRaporu,5).click();
+        waitForVisibility(movita.menuSoforLogRaporu, 5).click();
 
     }
 
     @And("click on Sensör Raporu")
     public void clickOnSensörRaporu() {
-        waitForVisibility(movita.menuSensorRaporu,5).click();
+        waitForVisibility(movita.menuSensorRaporu, 5).click();
+
 
     }
+
+
+
+
 
 /*
     @Then("click on Rapor al")
@@ -1079,6 +1096,159 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @Then("User must see their own dashboard")
     public void userMustSeeTheirOwnDashboard() {
         Assert.assertTrue(movita.raporlar.isDisplayed());
+    }
+//------TC-128------
+
+    @Then("User clicks girisYapFirst button")
+    public void userClicksGirisYapFirstButton() {
+        waitForVisibility(movita.girisYapFirst, 5000).click();
+    }
+
+    @Then("user enters the username and password")
+    public void userEntersTheUsernameAndPassword() {
+        waitForVisibility(movita.userName2, 5000).sendKeys("demomovita");
+        waitForVisibility(movita.password, 5000).sendKeys("movita1192");
+    }
+
+    @Then("User clicks girisYapSecond button")
+    public void userClicksGirisYapSecondButton() {
+        waitForVisibility(movita.girisYapSecond, 5).click();
+    }
+
+    @Then("user should be login main page")
+    public void userShouldBeLoginMainPage() {
+        Assert.assertTrue(movita.logoMainPage.isDisplayed());
+    }
+
+    @Then("menus available should display on the left side of the screen")
+    public void menusAvailableShouldDisplayOnTheLeftSideOfTheScreen() {
+        Assert.assertTrue(movita.allMenu.isDisplayed());
+        System.out.println("AllMenu.getLocation() = " + movita.allMenu.getLocation());
+    }
+
+    @Then("map should display in the middle")
+    public void mapShouldDisplayInTheMiddle() {
+        Assert.assertTrue(movita.map.isDisplayed());
+        System.out.println("Map.getLocation() = " + movita.map.getLocation());
+    }
+
+    @Then("summary information should display covering total vehicles")
+    public void summaryInformationShouldDisplayCoveringTotalVehicles() {
+        Assert.assertTrue(movita.vehicles.isDisplayed());
+        System.out.println("Vehicles.getLocation() = " + movita.vehicles.getLocation());
+    }
+
+    @Then("Anasayfa \\(filo_admin) submenus should be opened")
+    public void anasayfaFilo_adminSubmenusShouldBeOpened() {
+        System.out.println("Anasayfa.getText() = " + movita.anasayfa.getText());
+        Assert.assertTrue(movita.anasayfa.isDisplayed());
+    }
+
+    @And("Raporlar submenus should be opened")
+    public void raporlarSubmenusShouldBeOpened() {
+        System.out.println("Raporlar.getText() = " + movita.raporlar2.getText());
+        Assert.assertTrue(movita.raporlar2.isDisplayed());
+
+
+        waitForVisibility(movita.raporlar2, 5000).click();
+        Assert.assertTrue(movita.aracBazli.isDisplayed());
+        Assert.assertTrue(movita.yakitBazli.isDisplayed());
+        waitForVisibility(movita.raporlar2, 5000).click();
+    }
+
+    @And("Araç Rota submenus should be opened")
+    public void araçRotaSubmenusShouldBeOpened() {
+        System.out.println("AracRota.getText() = " + movita.aracRota.getText());
+        Assert.assertTrue(movita.aracRota.isDisplayed());
+
+    }
+
+    @And("Araç Video-Fotoğraf submenus should be opened")
+    public void araçVideoFotoğrafSubmenusShouldBeOpened() {
+        System.out.println("AracVideoFotograf.getText() = " + movita.aracVideoFotograf.getText());
+        Assert.assertTrue(movita.aracVideoFotograf.isDisplayed());
+
+    }
+
+    @And("Güzergah İslemleri submenus should be opened")
+    public void güzergahİslemleriSubmenusShouldBeOpened() {
+        System.out.println("Guzergahİslemleri.getText() = " + movita.guzergahIslemleri.getText());
+        Assert.assertTrue(movita.guzergahIslemleri.isDisplayed());
+
+        waitForVisibility(movita.guzergahIslemleri, 5000).click();
+        Assert.assertTrue(movita.aracBazliGuzergah.isDisplayed());
+        waitForVisibility(movita.guzergahIslemleri, 5000).click();
+    }
+
+    @And("Alarm Islemleri submenus should be opened")
+    public void alarmIslemleriSubmenusShouldBeOpened() {
+        System.out.println("AlarmIslemleri.getText() = " + movita.alarmIslemleri.getText());
+        Assert.assertTrue(movita.alarmIslemleri.isDisplayed());
+    }
+
+    @And("Rota islemleri submenus should be opened")
+    public void rotaIslemleriSubmenusShouldBeOpened() {
+        System.out.println("Rotaİslemleri.getText() = " + movita.rotaIslemleri.getText());
+        Assert.assertTrue(movita.rotaIslemleri.isDisplayed());
+
+        waitForVisibility(movita.rotaIslemleri, 5000).click();
+        Assert.assertTrue(movita.optimizasyon.isDisplayed());
+        waitForVisibility(movita.rotaIslemleri, 5000).click();
+    }
+
+    @And("Personel İslemleri submenus should be opened")
+    public void personelİslemleriSubmenusShouldBeOpened() {
+        System.out.println("Personelİslemleri.getText() = " + movita.personelIslemleri.getText());
+        Assert.assertTrue(movita.personelIslemleri.isDisplayed());
+
+        waitForVisibility(movita.personelIslemleri, 5000).click();
+        Assert.assertTrue(movita.personel.isDisplayed());
+        waitForVisibility(movita.personelIslemleri, 5000).click();
+    }
+
+    @And("Yönetim ve Ayarlar submenus should be opened")
+    public void yönetimVeAyarlarSubmenusShouldBeOpened() {
+        System.out.println("YonetimAyarlar.getText() = " + movita.yonetimAyarlar.getText());
+
+        Assert.assertTrue(waitForVisibility(movita.yonetimAyarlar, 5).isDisplayed());
+
+        movita.yonetimAyarlar.click();
+        Assert.assertTrue(waitForVisibility(movita.grupYonetimi, 5).isDisplayed());
+        Assert.assertTrue(waitForVisibility(movita.aracIslemleri, 5).isDisplayed());
+        movita.yonetimAyarlar.click();
+    }
+
+    @When("User login the main page any main and or subcomponent should not be selected")
+    public void userLoginTheMainPageAnyMainAndOrSubcomponentShouldNotBeSelected() {
+        Assert.assertFalse("Sekme Seçili", movita.anasayfa.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.raporlar2.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.aracRota.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.aracVideoFotograf.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.guzergahIslemleri.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.alarmIslemleri.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.rotaIslemleri.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.personelIslemleri.isSelected());
+        Assert.assertFalse("Sekme Seçili", movita.yonetimAyarlar.isSelected());
+
+    }
+
+    @When("User hovers over the main components background color should change from white to gray")
+    public void userHoversOverTheMainComponentsBackgroundColorShouldChangeFromWhiteToGray() {
+
+        String ilkRenk = movita.raporlar2.getCssValue("color");
+        ReusableMethods.hover(movita.raporlar2);
+        String ikinciRenk = movita.raporlar2.getCssValue("color");
+        Assert.assertFalse(ilkRenk.equals(ikinciRenk));
+        System.out.println("ilkRenk.asHex() = " + Color.fromString(ilkRenk).asHex());
+        System.out.println("ikinciRenk.asHex() = " + Color.fromString(ikinciRenk).asHex());
+
+
+        movita.raporlar2.click();
+        String ucuncuRenk = movita.raporlar2.getCssValue("color");
+        Assert.assertTrue(ikinciRenk.equals(ucuncuRenk));
+        System.out.println("ilkRenk2.asHex() = " + Color.fromString(ikinciRenk).asHex());
+        System.out.println("ikinciRenk2.asHex() = " + Color.fromString(ucuncuRenk).asHex());
+        movita.raporlar2.click();
     }
 
 }
