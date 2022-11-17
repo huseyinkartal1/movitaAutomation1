@@ -382,9 +382,9 @@ public class MovitaPage {
  public WebElement menuSensorRaporu;
 
 
-
-
-
+ // Login Page - Login Button
+ @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
+public WebElement loginButton;
 
 
 
