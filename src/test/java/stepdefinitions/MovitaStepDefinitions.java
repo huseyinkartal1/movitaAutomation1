@@ -1080,4 +1080,5 @@ public class MovitaStepDefinitions extends ReusableMethods {
     public void userMustSeeTheirOwnDashboard() {
         Assert.assertTrue(movita.raporlar.isDisplayed());
     }
+
 }
