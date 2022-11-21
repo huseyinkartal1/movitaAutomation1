@@ -1232,23 +1232,93 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     }
 
+
+
     @When("User hovers over the main components background color should change from white to gray")
     public void userHoversOverTheMainComponentsBackgroundColorShouldChangeFromWhiteToGray() {
 
-        String ilkRenk = movita.raporlar2.getCssValue("color");
-        ReusableMethods.hover(movita.raporlar2);
-        String ikinciRenk = movita.raporlar2.getCssValue("color");
-        Assert.assertFalse(ilkRenk.equals(ikinciRenk));
-        System.out.println("ilkRenk.asHex() = " + Color.fromString(ilkRenk).asHex());
-        System.out.println("ikinciRenk.asHex() = " + Color.fromString(ikinciRenk).asHex());
+        String ilkRenkZemin=movita.raporlar3.getCssValue("background-color");
+        ReusableMethods.hover(movita.raporlar3);
+        String ikinciRenkZemin=movita.raporlar3.getCssValue("background-color");
+        Assert.assertFalse(ilkRenkZemin.equals(ikinciRenkZemin));
 
+        System.out.println("-----Açılır menünün üstüne gelince zemin renginde değişim olması-----");
+        System.out.println("ilkRenkZemin.asHex() = " + Color.fromString(ilkRenkZemin).asHex());
+        System.out.println("ikinciRenkZemin.asHex() = " + Color.fromString(ikinciRenkZemin).asHex());
 
-        movita.raporlar2.click();
-        String ucuncuRenk = movita.raporlar2.getCssValue("color");
-        Assert.assertTrue(ikinciRenk.equals(ucuncuRenk));
-        System.out.println("ilkRenk2.asHex() = " + Color.fromString(ikinciRenk).asHex());
-        System.out.println("ikinciRenk2.asHex() = " + Color.fromString(ucuncuRenk).asHex());
-        movita.raporlar2.click();
     }
 
+    @When("User click the main components Openable component's background color remains grey, ana text color is not change")
+    public void userClickTheMainComponentsOpenableComponentSBackgroundColorRemainsGreyAnaTextColorIsNotChange() {
+
+
+        ReusableMethods.hover(movita.raporlar3);
+
+        String ilkRenkMetin=movita.raporlar3.getCssValue("color");
+        String ilkRenkZemin=movita.raporlar3.getCssValue("background-color");
+
+        movita.raporlar3.click();
+
+        String ikinciRenkMetin = movita.raporlar3.getCssValue("color");
+        String ikinciRenkZemin = movita.raporlar3.getCssValue("background-color");
+
+        Assert.assertTrue(ilkRenkMetin.equals(ikinciRenkMetin));
+
+        System.out.println("-----Açılır menüye tıklayınca yazı renginde herhangi bir değişim olmaması-----");
+        System.out.println("ilkRenkMetin.asHex() = " + Color.fromString(ilkRenkMetin).asHex());
+        System.out.println("ikinciRenkMetin.asHex() = " + Color.fromString(ikinciRenkMetin).asHex());
+
+        Assert.assertTrue(ilkRenkZemin.equals(ikinciRenkZemin));
+
+        System.out.println("-----Açılır menüye tıklayınca zemin renginde herhangi bir değişim olmaması-----");
+        System.out.println("ilkRenkZemin.asHex() = " + Color.fromString(ikinciRenkZemin).asHex());
+        System.out.println("ikinciRenkZemin.asHex() = " + Color.fromString(ikinciRenkZemin).asHex());
+
+        movita.raporlar3.click();
+
+    }
+
+    @When("User click the main components Not openable component's background color remains grey, but text color is change to blue")
+    public void userClickTheMainComponentsNotOpenableComponentSBackgroundColorRemainsGreyButTextColorIsChangeToBlue() {
+
+        waitFor(2);
+        ReusableMethods.hover(movita.alarmIslemleri3);
+
+        String ilkRenkZemin=movita.alarmIslemleri3.getCssValue("background-color");
+        String ilkRenkMetin=movita.alarmIslemleri3.getCssValue("color");
+
+        waitForVisibility(movita.alarmIslemleri3,2).click();
+        waitFor(2);
+
+        String ikinciRenkZemin=movita.alarmIslemleri3.getCssValue("background-color");
+        String ikinciRenkMetin=movita.alarmIslemleri3.getCssValue("color");
+
+
+
+        System.out.println("-----Açılır olmayan menüye tıklayınca zemin renginde değişim olmaması-----");
+        System.out.println("ilkRenkZemin.asHex() = " + Color.fromString(ilkRenkZemin).asHex());
+        System.out.println("ikinciRenkZemin.asHex() = " + Color.fromString(ikinciRenkZemin).asHex());
+
+        System.out.println("-----Açılır olmayan menüye tıklayınca metin renginde değişim olması-----");
+        System.out.println("ilkRenkMetin.asHex() = " + Color.fromString(ilkRenkMetin).asHex());
+        System.out.println("ikinciRenkMetin.asHex() = " + Color.fromString(ikinciRenkMetin).asHex());
+
+        Assert.assertTrue(ilkRenkZemin.equals(ikinciRenkZemin));
+        Assert.assertFalse(ilkRenkMetin.equals(ikinciRenkMetin));
+
+    }
+
+    @When("User clicks on the Movita Logo User should reach the layout after logging into his account")
+    public void userClicksOnTheMovitaLogoUserShouldReachTheLayoutAfterLoggingIntoHisAccount() {
+        movita.movitaLogo2.click();
+        Assert.assertTrue(movita.loginPageLayout.isDisplayed());
+    }
+
+    @Then("User should read ‘Copyright © {int} - {int}, Bütün Hakları Saklıdır.’ in the bottom footer of the screen.")
+    public void userShouldReadCopyrightBütünHaklarıSaklıdırInTheBottomFooterOfTheScreen(int arg0, int arg1) {
+        System.out.println("copyRight.getText() = " + movita.copyRight.getText());
+        String actualText=movita.copyRight.getText();
+        String expectedText="Copyright © 2017 - 2022, Bütün Hakları Saklıdır.";
+        Assert.assertTrue("Footer metni farklıdır",actualText.equals(expectedText));
+    }
 }

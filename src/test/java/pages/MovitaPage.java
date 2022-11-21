@@ -455,8 +455,23 @@ public class MovitaPage {
 @FindBy(xpath = "//li[@id='arac_islem']")
  public WebElement aracIslemleri;
 
-@FindBy(xpath = "//li[@class='nav-item has-sub open']")
- public WebElement tumMenu;
+@FindBy(xpath = "//*[@id=\"main-menu-navigation\"]/li[2]/a")
+public WebElement raporlar3;
+
+@FindBy(xpath = "//*[@id=\"alarm_listesi\"]/a")
+public WebElement alarmIslemleri2;
+
+@FindBy(xpath = "//a[@href=\"/alarm-listesi\"]")
+public WebElement alarmIslemleri3;
+
+@FindBy(xpath = "//img[@id=\"ic-logo\"]")
+public WebElement movitaLogo2;
+
+@FindBy(xpath = "//div[@class='content-wrapper']")
+public WebElement loginPageLayout;
+
+@FindBy(xpath = "/html/body/footer/p/span")
+public WebElement copyRight;
 
 
 
