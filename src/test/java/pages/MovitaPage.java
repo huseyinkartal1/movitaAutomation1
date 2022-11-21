@@ -473,13 +473,35 @@ public WebElement loginPageLayout;
 @FindBy(xpath = "/html/body/footer/p/span")
 public WebElement copyRight;
 
-
-
-
  // Login Page - Login Button
  @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
 public WebElement loginButton;
 
+@FindBy (css = "select.yearselect")
+ public WebElement selectYear1;
+ @FindBy (css = "select.monthselect")
+ public WebElement selectMonth1;
+ @FindBy (xpath = ".//td[text()=\"1\"]")
+ public WebElement firstDayOfTheMonth;
+
+ @FindBy (xpath = ".//*[text()=\"Detaylı Filtre\"]")
+ public WebElement detayliFiltre;
+
+ @FindBy (css = "label[for=\"tarih_filter\"]")
+ public WebElement tarihfilter;
+
+ @FindBy (css = "label[for=\"is_baslama_filter\"]")
+ public WebElement iseBaslamaFilter;
+
+ @FindBy (css = "label[for=\"is_bitis_filter\"]")
+ public WebElement isBitisFilter;
+
+ @FindBy (css = "input#tarih_filter")
+ public WebElement inputTarihFilter;
+ @FindBy (css = "input#is_baslama_filter")
+ public WebElement inputIseBaslamaFilter;
+ @FindBy (css = "input#is_bitis_filter")
+ public WebElement inputIsBitisFilter;
 
 
 }
