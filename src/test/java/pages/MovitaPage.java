@@ -503,5 +503,15 @@ public WebElement loginButton;
  @FindBy (css = "input#is_bitis_filter")
  public WebElement inputIsBitisFilter;
 
+ @FindBy (xpath = ".//td[contains(text(),\"2022\")]/parent::tr")
+ public List<WebElement> resultDate2022;
+
+ @FindBy (xpath = "//td[contains(text(),\"2021-11\")]/parent::tr")
+ public List<WebElement> resultDate2021_11;
+
+ @FindBy (xpath = "//td[contains(text(),\"2021-11-05\")]/parent::tr")
+ public List<WebElement> resultDate2021_11_05;
+
+
 
 }
