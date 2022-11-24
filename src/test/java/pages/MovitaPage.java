@@ -381,10 +381,136 @@ public class MovitaPage {
  @FindBy(xpath = ".//*[text()=\"Sensör Log Raporu\"]")
  public WebElement menuSensorRaporu;
 
+ //------TC-128------
+
+ @FindBy(xpath = "//*[.=\"GİRİŞ Yap\"]")
+ public WebElement girisYapFirst;
+
+ @FindBy(xpath = "//input[@id='username']")
+ public WebElement userName2;
+
+ @FindBy(xpath = "//input[@id='password']")
+ public WebElement passWord;
+
+ @FindBy(xpath = "//button[@type=\"submit\"]")
+ public WebElement girisYapSecond;
+
+ @FindBy(xpath = "//img[@id='ic-logo']")
+ public WebElement logoMainPage;
+
+ @FindBy (xpath = "//div[@class='main-menu menu-fixed menu-light menu-accordion menu-shadow']")
+ public WebElement allMenu;
+
+ @FindBy(xpath = "//div[@aria-label='Harita']")
+ public WebElement map;
+
+ @FindBy(xpath = "//div[@class='col-lg-2 col-md-2 text-xs-center']")
+ public WebElement vehicles;
+
+ @FindBy(xpath = "//li[@id='anasayfa']")
+ public WebElement anasayfa;
+
+ @FindBy(xpath = "//*[text()='Raporlar']")
+ public WebElement raporlar2;
+
+ @FindBy(xpath = "//*[text()='Araç Rota']")
+ public WebElement aracRota;
+
+ @FindBy(xpath = "//*[text()='Araç Video-Fotoğraf']  ")
+ public WebElement aracVideoFotograf;
+
+ @FindBy (xpath = "//*[text()='Güzergah İşlemleri']")
+ public WebElement guzergahIslemleri;
+
+ @FindBy(xpath = "//*[text()='Alarm İşlemleri']")
+ public WebElement alarmIslemleri;
+
+ @FindBy(xpath = "//*[text()='Rota İşlemleri']")
+ public WebElement rotaIslemleri;
+
+ @FindBy(xpath = "//*[text()='Personel İşlemleri']")
+ public WebElement personelIslemleri;
+
+ @FindBy(xpath = "//*[text()='Yönetim ve Ayarlar']")
+ public WebElement yonetimAyarlar;
+
+ @FindBy(xpath = "//li[@id='arac_bazli_rpr']")
+ public WebElement aracBazli;
+
+ @FindBy(xpath = "//li[@id='yakit_bazli_rpr']")
+ public WebElement yakitBazli;
+
+@FindBy(xpath = "//li[@id='arac_bazli_guzergah']")
+ public WebElement aracBazliGuzergah;
+
+@FindBy(xpath = "//li[@id='rota_optimizasyonu_oto']")
+ public WebElement optimizasyon;
+
+@FindBy(xpath = "//li[@id='personel_listesi']")
+ public WebElement personel;
+
+@FindBy(xpath = "//li[@id='filo_yonetim']")
+ public WebElement grupYonetimi;
+
+@FindBy(xpath = "//li[@id='arac_islem']")
+ public WebElement aracIslemleri;
+
+@FindBy(xpath = "//*[@id=\"main-menu-navigation\"]/li[2]/a")
+public WebElement raporlar3;
+
+@FindBy(xpath = "//*[@id=\"alarm_listesi\"]/a")
+public WebElement alarmIslemleri2;
+
+@FindBy(xpath = "//a[@href=\"/alarm-listesi\"]")
+public WebElement alarmIslemleri3;
+
+@FindBy(xpath = "//img[@id=\"ic-logo\"]")
+public WebElement movitaLogo2;
+
+@FindBy(xpath = "//div[@class='content-wrapper']")
+public WebElement loginPageLayout;
+
+@FindBy(xpath = "/html/body/footer/p/span")
+public WebElement copyRight;
 
  // Login Page - Login Button
  @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
 public WebElement loginButton;
+
+@FindBy (css = "select.yearselect")
+ public WebElement selectYear1;
+ @FindBy (css = "select.monthselect")
+ public WebElement selectMonth1;
+ @FindBy (xpath = ".//td[text()=\"1\"]")
+ public WebElement firstDayOfTheMonth;
+
+ @FindBy (xpath = ".//*[text()=\"Detaylı Filtre\"]")
+ public WebElement detayliFiltre;
+
+ @FindBy (css = "label[for=\"tarih_filter\"]")
+ public WebElement tarihfilter;
+
+ @FindBy (css = "label[for=\"is_baslama_filter\"]")
+ public WebElement iseBaslamaFilter;
+
+ @FindBy (css = "label[for=\"is_bitis_filter\"]")
+ public WebElement isBitisFilter;
+
+ @FindBy (css = "input#tarih_filter")
+ public WebElement inputTarihFilter;
+ @FindBy (css = "input#is_baslama_filter")
+ public WebElement inputIseBaslamaFilter;
+ @FindBy (css = "input#is_bitis_filter")
+ public WebElement inputIsBitisFilter;
+
+ @FindBy (xpath = ".//td[contains(text(),\"2022\")]/parent::tr")
+ public List<WebElement> resultDate2022;
+
+ @FindBy (xpath = "//td[contains(text(),\"2021-11\")]/parent::tr")
+ public List<WebElement> resultDate2021_11;
+
+ @FindBy (xpath = "//td[contains(text(),\"2021-11-05\")]/parent::tr")
+ public List<WebElement> resultDate2021_11_05;
 
 
 
