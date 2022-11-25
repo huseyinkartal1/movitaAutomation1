@@ -38,7 +38,7 @@ Feature: US_MAT-112_TC-MAT-128_Modules under user account movita logo
       When User clicks on the Movita Logo User should reach the layout after logging into his account
 
       Scenario:TC-128 Copyright Text
-        Then User should read ‘Copyright © 2017 - 2022, Bütün Hakları Saklıdır.’ in the bottom footer of the screen.
+        Then User should read "Copyright © 2017 - 2022 movita, Bütün Hakları Saklıdır." in the bottom footer of the screen.
 
 
 

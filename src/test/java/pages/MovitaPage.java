@@ -401,7 +401,7 @@ public class MovitaPage {
  @FindBy (xpath = "//div[@class='main-menu menu-fixed menu-light menu-accordion menu-shadow']")
  public WebElement allMenu;
 
- @FindBy(xpath = "//div[@aria-label='Harita']")
+ @FindBy(xpath = "//div[@id='map']")
  public WebElement map;
 
  @FindBy(xpath = "//div[@class='col-lg-2 col-md-2 text-xs-center']")
