@@ -999,94 +999,93 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("user should be login main page")
     public void userShouldBeLoginMainPage() {
-        Assert.assertTrue(waitForVisibility(movita.logoMainPage,2).isDisplayed());
-
+        Assert.assertTrue(movita.logoMainPage.isDisplayed());
     }
 
     @Then("menus available should display on the left side of the screen")
     public void menusAvailableShouldDisplayOnTheLeftSideOfTheScreen() {
-        Assert.assertTrue(waitForVisibility(movita.allMenu,2).isDisplayed());
+        Assert.assertTrue(movita.allMenu.isDisplayed());
         System.out.println("AllMenu.getLocation() = " + movita.allMenu.getLocation());
     }
 
     @Then("map should display in the middle")
     public void mapShouldDisplayInTheMiddle() {
-        Assert.assertTrue(waitForVisibility(movita.map,2).isDisplayed());
+        Assert.assertTrue(movita.map.isDisplayed());
         System.out.println("Map.getLocation() = " + movita.map.getLocation());
     }
 
     @Then("summary information should display covering total vehicles")
     public void summaryInformationShouldDisplayCoveringTotalVehicles() {
-        Assert.assertTrue(waitForVisibility(movita.vehicles,2).isDisplayed());
+        Assert.assertTrue(movita.vehicles.isDisplayed());
         System.out.println("Vehicles.getLocation() = " + movita.vehicles.getLocation());
     }
 
     @Then("Anasayfa \\(filo_admin) submenus should be opened")
     public void anasayfaFilo_adminSubmenusShouldBeOpened() {
         System.out.println("Anasayfa.getText() = " + movita.anasayfa.getText());
-        Assert.assertTrue(waitForVisibility(movita.anasayfa,2).isDisplayed());
+        Assert.assertTrue(movita.anasayfa.isDisplayed());
     }
 
     @And("Raporlar submenus should be opened")
     public void raporlarSubmenusShouldBeOpened() {
         System.out.println("Raporlar.getText() = " + movita.raporlar2.getText());
-        Assert.assertTrue(waitForVisibility(movita.raporlar2,2).isDisplayed());
+        Assert.assertTrue(movita.raporlar2.isDisplayed());
 
 
-        waitForVisibility(movita.raporlar2, 2).click();
-        Assert.assertTrue(waitForVisibility(movita.aracBazli,2).isDisplayed());
-        Assert.assertTrue(waitForVisibility(movita.yakitBazli,2).isDisplayed());
-        waitForVisibility(movita.raporlar2, 2).click();
+        waitForVisibility(movita.raporlar2, 5000).click();
+        Assert.assertTrue(movita.aracBazli.isDisplayed());
+        Assert.assertTrue(movita.yakitBazli.isDisplayed());
+        waitForVisibility(movita.raporlar2, 5000).click();
     }
 
     @And("Araç Rota submenus should be opened")
     public void araçRotaSubmenusShouldBeOpened() {
         System.out.println("AracRota.getText() = " + movita.aracRota.getText());
-        Assert.assertTrue(waitForVisibility(movita.aracRota,2).isDisplayed());
+        Assert.assertTrue(movita.aracRota.isDisplayed());
 
     }
 
     @And("Araç Video-Fotoğraf submenus should be opened")
     public void araçVideoFotoğrafSubmenusShouldBeOpened() {
         System.out.println("AracVideoFotograf.getText() = " + movita.aracVideoFotograf.getText());
-        Assert.assertTrue(waitForVisibility(movita.aracVideoFotograf,2).isDisplayed());
+        Assert.assertTrue(movita.aracVideoFotograf.isDisplayed());
 
     }
 
     @And("Güzergah İslemleri submenus should be opened")
     public void güzergahİslemleriSubmenusShouldBeOpened() {
         System.out.println("Guzergahİslemleri.getText() = " + movita.guzergahIslemleri.getText());
-        Assert.assertTrue(waitForVisibility(movita.guzergahIslemleri,2).isDisplayed());
+        Assert.assertTrue(movita.guzergahIslemleri.isDisplayed());
 
-        waitForVisibility(movita.guzergahIslemleri, 2).click();
-        Assert.assertTrue(waitForVisibility(movita.aracBazliGuzergah,2).isDisplayed());
-        waitForVisibility(movita.guzergahIslemleri, 2).click();
+        waitForVisibility(movita.guzergahIslemleri, 5000).click();
+        Assert.assertTrue(movita.aracBazliGuzergah.isDisplayed());
+        waitForVisibility(movita.guzergahIslemleri, 5000).click();
     }
 
     @And("Alarm Islemleri submenus should be opened")
     public void alarmIslemleriSubmenusShouldBeOpened() {
         System.out.println("AlarmIslemleri.getText() = " + movita.alarmIslemleri.getText());
-        Assert.assertTrue(waitForVisibility(movita.alarmIslemleri,2).isDisplayed());
+        Assert.assertTrue(movita.alarmIslemleri.isDisplayed());
     }
 
     @And("Rota islemleri submenus should be opened")
     public void rotaIslemleriSubmenusShouldBeOpened() {
         System.out.println("Rotaİslemleri.getText() = " + movita.rotaIslemleri.getText());
-        Assert.assertTrue(waitForVisibility(movita.rotaIslemleri,2).isDisplayed());
+        Assert.assertTrue(movita.rotaIslemleri.isDisplayed());
 
-        waitForVisibility(movita.rotaIslemleri, 2).click();
-        Assert.assertTrue(waitForVisibility(movita.optimizasyon,2).isDisplayed());
-        waitForVisibility(movita.rotaIslemleri, 2).click();
+        waitForVisibility(movita.rotaIslemleri, 5000).click();
+        Assert.assertTrue(movita.optimizasyon.isDisplayed());
+        waitForVisibility(movita.rotaIslemleri, 5000).click();
     }
 
     @And("Personel İslemleri submenus should be opened")
     public void personelİslemleriSubmenusShouldBeOpened() {
         System.out.println("Personelİslemleri.getText() = " + movita.personelIslemleri.getText());
-        Assert.assertTrue(waitForVisibility(movita.personelIslemleri,2).isDisplayed());
+        Assert.assertTrue(movita.personelIslemleri.isDisplayed());
 
-        waitForVisibility(movita.personelIslemleri, 2).click();
-        Assert.assertTrue(waitForVisibility(movita.personel,2).isDisplayed());
-        waitForVisibility(movita.personelIslemleri, 2).click();
+        waitForVisibility(movita.personelIslemleri, 5000).click();
+        Assert.assertTrue(movita.personel.isDisplayed());
+        waitForVisibility(movita.personelIslemleri, 5000).click();
     }
 
     @And("Yönetim ve Ayarlar submenus should be opened")
@@ -1194,16 +1193,14 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @When("User clicks on the Movita Logo User should reach the layout after logging into his account")
     public void userClicksOnTheMovitaLogoUserShouldReachTheLayoutAfterLoggingIntoHisAccount() {
         movita.movitaLogo2.click();
-        Assert.assertTrue(waitForVisibility(movita.loginPageLayout,2).isDisplayed());
+        Assert.assertTrue(movita.loginPageLayout.isDisplayed());
     }
 
-
-    @Then("User should read {string} in the bottom footer of the screen.")
-    public void userShouldReadInTheBottomFooterOfTheScreen(String arg0) {
+    @Then("User should read ‘Copyright © {int} - {int}, Bütün Hakları Saklıdır.’ in the bottom footer of the screen.")
+    public void userShouldReadCopyrightBütünHaklarıSaklıdırInTheBottomFooterOfTheScreen(int arg0, int arg1) {
         System.out.println("copyRight.getText() = " + movita.copyRight.getText());
         String actualText=movita.copyRight.getText();
-        String expectedText="Copyright © 2017 - 2022 movita , Bütün Hakları Saklıdır.";
+        String expectedText="Copyright © 2017 - 2022, Bütün Hakları Saklıdır.";
         Assert.assertTrue("Footer metni farklıdır",actualText.equals(expectedText));
-
     }
 }
