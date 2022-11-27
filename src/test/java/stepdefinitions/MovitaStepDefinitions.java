@@ -988,7 +988,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("user enters the username and password")
     public void userEntersTheUsernameAndPassword() {
-        waitForVisibility(movita.userName2, 5000).sendKeys("demomovita");
+        waitForVisibility(movita.userName, 5000).sendKeys("demomovita");
         waitForVisibility(movita.password, 5000).sendKeys("movita1192");
     }
 
