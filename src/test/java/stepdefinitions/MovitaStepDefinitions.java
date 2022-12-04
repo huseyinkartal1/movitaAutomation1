@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -1258,5 +1259,124 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
 
     }
+
+    //----------------Enes KULA --US_MAT-111_TC_MAT-144_GİRİŞ YAP Automation----------------
+//--------------------------------- Login Page -------------------------------------
+
+
+    @Then("User should click {string} button")
+    public void user_should_click_button(String string) {
+        movita.girisYap.click();
+    }
+
+    @Then("User should see logo {string}")
+    public void user_should_see_logo(String string) {
+        Assert.assertTrue(movita.loginPageLogo.isDisplayed());
+    }
+
+    @Then("User should see kullAdi {string}")
+    public void user_should_see_k(String string) {
+        Assert.assertTrue(movita.loginKullAdı.isDisplayed());
+        String kullAdi=movita.loginKullAdı.getText();
+        Assert.assertEquals(kullAdi,"Kullanıcı Adı");
+    }
+
+    @Then("User should see sifre {string}")
+    public void user_should_see_sifre(String string) {
+        Assert.assertTrue(movita.loginSifre.isDisplayed());
+    }
+
+    @Then("User should see sifreMiUnuttun {string}")
+    public void user_should_see_sifreMiUnuttun(String string) {
+        Assert.assertTrue(movita.loginSifre.isDisplayed());
+        Assert.assertTrue(movita.loginSifreMiUnuttun.isEnabled());
+    }
+
+    @Then("User should see girisButton {string}")
+    public void user_should_see_girisButton(String string) {
+        Assert.assertTrue(movita.loginGirisButton.isDisplayed());
+    }
+
+    @Then("User should see copy {string}")
+    public void user_should_see_copy(String string) {
+        Assert.assertTrue(movita.loginCopyright.isDisplayed());
+    }
+
+    @Then("User should see anasayfaDon {string}")
+    public void user_should_see_anasayfaDon(String string) {
+        Assert.assertTrue(movita.loginAnasayfayaDön.isDisplayed());
+    }
+
+    @Then("User should click anasayfaDon {string}")
+    public void user_should_click_anasayfaDon(String string) {
+        movita.loginAnasayfayaDön.click();
+    }
+
+    @Then("User should see anasayfa {string}")
+    public void user_should_see_anasayfa(String string) {
+        Assert.assertTrue(movita.girisYap.isDisplayed());
+
+    }
+
+
+    //-----------Enes KULA------------------
+//------------------US_MAT-96_TC_MAT-150_COPYRIGHTS VE ILETISIM BILGILERI------------
+
+    @Then("User should scroll down to bottom")
+    public void user_should_scroll_down_to_bottom() {
+        ReusableMethods.hover(movita.cozumlerKisiVeNesne);
+    }
+
+    @Then("User should see copyrights")
+    public void user_should_see_copyrights() {
+        String expCopyrightText="Copyrights © 2017 - 2022 movita Tüm Hakları Saklıdır.";
+        String actCopyrightText=movita.copyrightText.getText();
+        System.out.println(actCopyrightText);
+        System.out.println(expCopyrightText);
+        Assert.assertEquals(expCopyrightText,actCopyrightText);
+    }
+
+    @Then("User should see iletisim")
+    public void user_should_see_iletisim() {
+        String expIletisimMail="bilgi@movita.com.tr";
+        String expIletisimTel="+ 90 (850) 557 7627 ";
+        String actIletisimText=movita.iletisimMail.getText();
+        System.out.println(expIletisimMail);
+        System.out.println(expIletisimTel);
+        System.out.println(actIletisimText);
+        Assert.assertTrue("Actual mail farklı",actIletisimText.contains(expIletisimMail));
+        Assert.assertTrue("Actual telefon farklı",actIletisimText.contains(expIletisimTel));
+    }
+
+    @Then("User should see arrowturnblue")
+    public void user_should_see_arrowturnblue() {
+
+        String ilkRenk=Driver.getDriver().findElement(By.xpath("//*[@id=\"gotoTop\"]")).getCssValue("background-color");
+        System.out.println("ilk Renk = "+ilkRenk);
+        ReusableMethods.hover(movita.goToTopArrow);
+        String sonRenk=Driver.getDriver().findElement(By.xpath("//*[@id=\"gotoTop\"]")).getCssValue("background-color");
+        System.out.println("son Renk = "+sonRenk);
+        Assert.assertFalse("renk değişmiyor",ilkRenk.equals(sonRenk));
+    }
+
+    @Then("User should see arrow")
+    public void user_should_see_arrow() {
+        Assert.assertTrue("Arrow görünmüyor",movita.goToTopArrow.isDisplayed());
+    }
+
+
+    @Then("User should click arrow")
+    public void user_should_click_arrow() throws InterruptedException {
+        movita.goToTopArrow.click();
+        Thread.sleep(3000);
+    }
+
+    @Then("User should see mainPage")
+    public void user_should_see_main_page()  {
+
+        Assert.assertTrue("Arrow tuşu yukarı çıkarmadı",movita.mainTextTurkish.isDisplayed());
+
+    }
+
 
 }
