@@ -12,6 +12,8 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import pages.MovitaPage;
@@ -1206,4 +1208,55 @@ public class MovitaStepDefinitions extends ReusableMethods {
         Assert.assertTrue("Footer metni farklıdır",actualText.equals(expectedText));
 
     }
+
+    //-----TC-125-----
+    @Given("user hover over on menu item clicks on items in order user verifies the page")
+    public void userHoverOverOnMenuItemClicksOnItemsInOrderUserVerifiesThePage() {
+        Object array[][]={
+                {movita.kurumsal, movita.hakkimizda, movita.textHakkimizda},
+                {movita.kurumsal, movita.belgelerimiz, movita.textBelgelerimiz},
+                {movita.kurumsal, movita.bayilikBasvuru, movita.textBayilikBasvuru},
+                {movita.kurumsal, movita.demoBasvuru, movita.textDemoBasvuru},
+                {movita.kurumsal, movita.cerezPolitikasi, movita.textCerezPolitikasi},
+                {movita.kurumsal, movita.kvkk, movita.textKvkk},
+                {movita.urunler, movita.mnvr, movita.textMnvr},
+                {movita.urunler, movita.mnvrPro, movita.textMnvrPro},
+                {movita.urunler, movita.aracTakipCihazi, movita.textAracTakipCihazi},
+                {movita.urunler, movita.urunlerAltMenu, movita.textUrunlerAltMenu},
+                {movita.urunler, movita.akilliDirekSistemi, movita.textAkilliDirekSistemi},
+                {movita.cozumlerimiz, movita.taksiOzelArac, movita.textTaksiOzelArac},
+                {movita.cozumlerimiz, movita.minibusMidibus, movita.textMinibusMidibus},
+                {movita.cozumlerimiz, movita.sehirlerArasiOtobus, movita.textSehirlerArasiOtobus},
+                {movita.cozumlerimiz, movita.zirhliTasimaAraclari, movita.textZirhliTasimaAraclari},
+                {movita.cozumlerimiz, movita.okulServisleri, movita.textOkulServisleri},
+                {movita.cozumlerimiz, movita.guvenlikKuvvetleriAraclari, movita.textGuvenlikKuvvetleriAraclari},
+                {movita.cozumlerimiz, movita.yukVeEsyaTasiyanAraclar, movita.textYukVeEsyaTasiyanAraclar},
+                {movita.cozumlerimiz, movita.belediyeVeHalkOtobusleri, movita.textBelediyeVeHalkOtobusleri}
+
+
+        };
+
+        for (Object[] e:array){
+
+            ReusableMethods.hover((WebElement) e[0]);
+            waitForClickablility((WebElement) e[1],3).click();
+            Assert.assertTrue(((WebElement)e[2]).isDisplayed());
+
+        }
+    }
+
+    @Then("user should see the expected Text")
+    public void userShouldSeeTheExpectedText() {
+        String actualText1=movita.textMNVR1.getText();
+        String actualText2=movita.textMNVR2.getText();
+        String expectedText1="Mobil Vasıta İzleme Takip Sistemi";
+        String expectedText2="movita MNVR ile tüm araçları izleyip, takip edebilirisniz";
+        Assert.assertTrue(expectedText1.equals(actualText1));
+        Assert.assertTrue(expectedText2.equals(actualText2));
+        System.out.println("actualText1 = " + actualText1);
+        System.out.println("actualText2 = " + actualText2);
+
+
+    }
+
 }
