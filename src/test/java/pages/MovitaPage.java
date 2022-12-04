@@ -442,6 +442,156 @@ public WebElement loginButton;
  @FindBy (xpath = "//td[contains(text(),\"2021-11-05\")]/parent::tr")
  public List<WebElement> resultDate2021_11_05;
 
+ //-----TC-125-----
+ @FindBy(xpath = "//*[@class='tp-caption ltl tp-resizeme revo-slider-emphasis-text p-0 border-0 skrollable skrollable-between']   ")
+ public WebElement textMNVR1;
+
+ @FindBy(xpath = "//*[@class='tp-caption ltl tp-resizeme revo-slider-desc-text skrollable skrollable-between']")
+ public WebElement textMNVR2;
+
+ @FindBy(xpath = "//*[text()='Kurumsal']")
+ public WebElement kurumsal;
+
+ @FindBy(xpath = "//*[text()='Hakkımızda']")
+ public WebElement hakkimizda;
+
+ @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+ public WebElement textHakkimizda;
+
+ @FindBy(xpath = "//a[@href=\"/belgelerimiz\"]")
+ public WebElement belgelerimiz;
+
+ @FindBy(xpath = "//*[text()='BELGELERİMİZ']")
+ public WebElement textBelgelerimiz;
+
+ @FindBy(xpath = "//a[@ href=\"/bayi_basvuru\"]")
+ public WebElement bayilikBasvuru;
+
+ @FindBy(xpath = "//*[text()='Bayilik Başvuru']")
+ public WebElement textBayilikBasvuru;
+
+ @FindBy(xpath = "//a[@ href=\"/demo_basvuru\"]")
+ public WebElement demoBasvuru;
+
+ @FindBy(xpath = "//*[text()='Demo Başvuru']")
+ public WebElement textDemoBasvuru;
+
+ @FindBy(xpath = "//a[@ href=\"/cerez\"]")
+ public WebElement cerezPolitikasi;
+
+ @FindBy(xpath = "//h3[text()='Çerez Politikası']")
+ public WebElement textCerezPolitikasi;
+
+ @FindBy(xpath = "//a[@ href=\"/kvkk\"]")
+ public WebElement kvkk;
+
+ @FindBy(xpath = "//*[text()='KİŞİSEL VERİLERİN İŞLENME POLİTİKASI']")
+ public WebElement textKvkk;
+
+ @FindBy(xpath = "//a[@ href=\"/urunler\"]")
+ public WebElement urunler;
+
+ @FindBy(xpath = "//a[@ href=\"/mnvr\"]")
+ public WebElement mnvr;
+
+ @FindBy(xpath = "//h3[text()='MNVR']")
+ public WebElement textMnvr;
+
+ @FindBy(xpath = "//a[@ href=\"/mnvr_pro\"]")
+ public WebElement mnvrPro;
+
+ @FindBy(xpath = "//h3[text()='MNVR Pro']")
+ public WebElement textMnvrPro;
+
+ @FindBy(xpath = "//a[@ href=\"/arac_takip_cihazi\"]")
+ public WebElement aracTakipCihazi;
+
+ @FindBy(xpath = "//h3[text()='Araç Takip Cihazı']")
+ public WebElement textAracTakipCihazi;
+
+ @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[3]/ul/li[5]/a")
+ public WebElement urunlerAltMenu;
+
+ @FindBy(xpath = "//*[text()='Ürünler']")
+ public WebElement textUrunlerAltMenu;
+
+ @FindBy(xpath = "//a[@ href=\"/akilli_direk\"]")
+ public WebElement akilliDirekSistemi;
+
+ @FindBy(xpath = "//h3[text()='Akıllı Direk Sistemi']")
+ public WebElement textAkilliDirekSistemi;
+
+ @FindBy(xpath = "//div[text()='Çözümler']")
+ public WebElement cozumlerimiz;
+
+ @FindBy(xpath = "//a[@href=\"/taksi-ozel-arac\"]")
+ public WebElement taksiOzelArac;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textTaksiOzelArac;
+
+ @FindBy(xpath = "//a[@href=\"/minibus-midibus\"]")
+ public WebElement minibusMidibus;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textMinibusMidibus;
+
+ @FindBy(xpath = "//a[@href=\"/sehirler-arasi-otobus\"]")
+ public WebElement sehirlerArasiOtobus;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textSehirlerArasiOtobus;
+
+ @FindBy(xpath = "//a[@href=\"/zirhli-tasima-arac\"]")
+ public WebElement zirhliTasimaAraclari;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textZirhliTasimaAraclari;
+
+ @FindBy(xpath = "//a[@href=\"/okul-servisleri\"]")
+ public WebElement okulServisleri;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textOkulServisleri;
+
+ @FindBy(xpath = "//a[@href=\"/guvenlik-kuvvet-arac\"]")
+ public WebElement guvenlikKuvvetleriAraclari;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textGuvenlikKuvvetleriAraclari;
+
+ @FindBy(xpath = "//a[@href=\"/yuk-tasiyan-araclar\"]")
+ public WebElement yukVeEsyaTasiyanAraclar;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textYukVeEsyaTasiyanAraclar;
+
+ @FindBy(xpath = "//a[@href=\"/belediye-halk-otobus\"]")
+ public WebElement belediyeVeHalkOtobusleri;
+
+ @FindBy(xpath = "//h2[@class='d-flex']")
+ public WebElement textBelediyeVeHalkOtobusleri;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
