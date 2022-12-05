@@ -6,6 +6,9 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import utilities.Driver;
+import utilities.ReusableMethods;
+
+import java.io.IOException;
 
 public class Hooks {
 
@@ -21,11 +24,12 @@ public class Hooks {
 
 
     @After
-    public void tearDown(Scenario scenario){
+    public void tearDown(Scenario scenario) throws IOException {
 
         final byte[] screenshot=((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
         if (scenario.isFailed()) {
-            scenario.attach(screenshot, "image/png","screenshots");
+            scenario.attach(screenshot, "image/png","\\test-output\\screenshots");
+           // ReusableMethods.getScreenshot("Failed scenario");
         }
         Driver.closeDriver();
     }
