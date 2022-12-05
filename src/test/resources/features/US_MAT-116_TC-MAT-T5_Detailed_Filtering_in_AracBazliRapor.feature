@@ -29,6 +29,13 @@ Feature:  Deatiled Filter
       | 2021-11-05 | 1      |
 
 
+  Scenario: Date filter
+    And deneme user sends input as tarih
+      | 2022       |
+      | 2021-11    |
+      | 2021-11-05 |
+
+
   Scenario Outline: Date filter with ise baslama
     Given user sends input as "2021-11"
     Then user verifies filtered result with date and ise baslama "<ise baslama>"

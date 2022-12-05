@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -19,6 +20,8 @@ import utilities.ReusableMethods;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.*;
 
 public class MovitaRaporlarStepDefinition extends ReusableMethods {
@@ -178,10 +181,14 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     }
 
     @Given("user sends input as {string}")
-    public void userSendsInputAs(String arg0) {
+    public void userSendsInputAs(String arg0) throws IOException {
         movita.inputTarihFilter.clear();
         movita.inputTarihFilter.sendKeys(arg0);
+
     }
+
+
+
 
     @Then("user verifies {int} filtered result with date {string}")
     public void userVerifiesFilteredResultWithDate(int arg0, String arg1) {
@@ -232,10 +239,27 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
         movita.inputIseBaslamaFilter.clear();
         movita.inputIsBitisFilter.clear();
         movita.inputIsBitisFilter.sendKeys(arg0);
-
            // TODO: RETEST after fix:  MAT-148 Bug report created
         assertEquals(result.size(), movita.resultDate2021_11.size());
     }
+
+
+
+    @Given("deneme user sends input as tarih")
+    public void denemeUserSendsInputAsTarih(DataTable table) {
+
+        List<String> list= table.asList();
+
+     for (String s : list) {
+         movita.inputTarihFilter.clear();
+         movita.inputTarihFilter.sendKeys(s);
+
+     }
+
+    }
+
+
+
 
     //TODO: hkartal -> After fix ADD 2 more steps as in US_MAT-116_TC_MAT-T5_ 29th and 30th steps
 
