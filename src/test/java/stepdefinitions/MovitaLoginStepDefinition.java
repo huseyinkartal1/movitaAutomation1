@@ -34,7 +34,7 @@ public class MovitaLoginStepDefinition extends ReusableMethods {
 
     @Then("User click to login button")
     public void userClickToLoginButton() {
-        movita.loginButton.click();
+        movita.loginGirisButton.click();
     }
 
     @Then("User must see their own dashboard")

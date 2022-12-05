@@ -1376,4 +1376,103 @@ public class MovitaStepDefinitions extends ReusableMethods {
     }
 
 
+    //   --------- Alkan Tuncer -----------
+    //---------- SmokeTest_US_MAT-137_Personelİşlemleri -----------------
+
+
+    @Then("User click to Personel Islemleri")
+    public void userClickToPersonelIslemleri() {
+        waitForVisibility(movita.personelIslemleri,5).click();
+    }
+
+    @Then("User click to Personel")
+    public void userClickToPersonel() {
+        waitForVisibility(movita.personel,5).click();
+    }
+
+    @Then("User should be on Personel Listesi page")
+    public void userShouldBeOnPersonelListesiPage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertEquals("http://movita.com.tr:9045/personel-listesi", Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Is Atama")
+    public void userClickToIsAtama() {
+        waitForVisibility(movita.isAtama,5).click();
+    }
+
+    @Then("User should be on Is Atama page")
+    public void userShouldBeOnIsAtamaPage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertEquals("http://movita.com.tr:9045/is-atama-listesi", Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Servis Islemleri")
+    public void userClickToServisIslemleri() {
+        waitForVisibility(movita.servisIslemleri,5).click();
+    }
+
+    @Then("User should be on Servis Islemleri page")
+    public void userShouldBeOnServisIslemleriPage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertEquals("http://movita.com.tr:9045/servis-islemleri", Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Birim Listesi")
+    public void userClickToBirimListesi() {
+        waitForVisibility(movita.birimListesi,5).click();
+    }
+
+    @Then("User should be on Birim Listesi page")
+    public void userShouldBeOnBirimListesiPage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertEquals("http://movita.com.tr:9045/birim-listesi", Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Personel Anket")
+    public void userClickToPersonelAnket() {
+        waitForVisibility(movita.personelAnket,5).click();
+    }
+
+    @Then("User should be on Personel Anket page")
+    public void userShouldBeOnPersonelAnketPage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertEquals("http://movita.com.tr:9045/personel-anket-listesi", Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Personel Sikayet Talep")
+    public void userClickToPersonelSikayetTalep() {
+        waitForVisibility(movita.personelSikayetTalep,5).click();
+    }
+
+    @Then("User should be on Personel Sikayet Talep page")
+    public void userShouldBeOnPersonelSikayetTalepPage() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertEquals("http://movita.com.tr:9045/personel-talep-listesi", Driver.getDriver().getCurrentUrl());
+    }
+
 }
