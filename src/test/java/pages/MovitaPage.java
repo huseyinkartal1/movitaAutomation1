@@ -686,5 +686,23 @@ public WebElement loginButton;
  public WebElement goToTopArrow;
 
 
+ // ------ Alkan Tuncer / SmokeTest_US_MAT-137_Personelİşlemleri
+ // Personel İşlemleri and Sub-Components Locators
+
+ @FindBy(xpath = "//li[@id='is_atama_listesi']")
+ public WebElement isAtama;
+
+ @FindBy(xpath = "//li[@id='servis_islemleri']")
+ public WebElement servisIslemleri;
+
+ @FindBy(xpath = "//li[@id='birim_listesi']")
+ public WebElement birimListesi;
+
+ @FindBy(xpath = "//li[@id='personel_anket_listesi']")
+ public WebElement personelAnket;
+
+ @FindBy(xpath = "//li[@id='personel_talep_listesi']")
+ public WebElement personelSikayetTalep;
+
 
 }
