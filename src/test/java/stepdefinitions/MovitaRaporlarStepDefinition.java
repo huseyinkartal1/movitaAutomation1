@@ -54,8 +54,7 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() throws InterruptedException {
 
-   Thread.sleep(2000);
-   movita.menuAracBazliRapor.click();
+        click(movita.menuAracBazliRapor);
     }
 
     @Then("click  on Rapor al")
