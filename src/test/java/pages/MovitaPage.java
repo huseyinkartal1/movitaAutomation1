@@ -338,7 +338,7 @@ public class MovitaPage {
  @FindBy(css = "i.ft-pie-chart")
  public WebElement menuRaporlar;
 
- @FindBy(xpath = ".//*[text()=\"Araç Bazlı Rapor\"]")
+ @FindBy(xpath = ".//*[text()=\"Araç Bazlı Rapor\"]/parent::li")
  public WebElement menuAracBazliRapor;
 
 
