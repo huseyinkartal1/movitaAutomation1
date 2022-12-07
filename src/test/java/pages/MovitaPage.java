@@ -9,11 +9,6 @@ import java.util.List;
 
 public class MovitaPage {
 
-//check it out
- public void deneme(){
-
- }
-
 
     public MovitaPage(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -353,7 +348,7 @@ public class MovitaPage {
  @FindBy(xpath = ".//*[text()=\"Yakıt Entegrasyon Raporu\"]")
  public WebElement menuYakitEntegrasyonRaporu;
 
- @FindBy(xpath = ".//*[text()=\"Günlük Seyehat Raporu\"]")
+ @FindBy(xpath = ".//*[text()=\"Günlük Seyahat Raporu\"]")
  public WebElement menuGunlukSeyahatRaporu;
 
  @FindBy(xpath = ".//*[text()=\"Aktivite Detay Raporu\"]")

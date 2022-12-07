@@ -1,4 +1,4 @@
-
+@smoketest
 Feature: Create smoke test case steps for the movita homepage
   Background: Go to homepage
     Given User navigates to "movita" page

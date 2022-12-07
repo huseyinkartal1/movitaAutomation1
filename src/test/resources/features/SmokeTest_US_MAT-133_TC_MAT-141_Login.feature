@@ -1,3 +1,4 @@
+@smoketest
 Feature: Smoke Test Login Function
 
   Scenario: Positive Login
