@@ -1245,10 +1245,11 @@ public class MovitaStepDefinitions extends ReusableMethods {
 
     @Then("user should see the expected Text")
     public void userShouldSeeTheExpectedText() {
-        String actualText1=movita.textMNVR1.getText();
-        String actualText2=movita.textMNVR2.getText();
+        String actualText1=ReusableMethods.waitForVisibility(movita.textMNVR1,5).getText();
+        String actualText2=ReusableMethods.waitForVisibility(movita.textMNVR2,5).getText();
         String expectedText1="Mobil Vasıta İzleme Takip Sistemi";
         String expectedText2="movita MNVR ile tüm araçları izleyip, takip edebilirisniz";
+
         Assert.assertTrue(expectedText1.equals(actualText1));
         Assert.assertTrue(expectedText2.equals(actualText2));
         System.out.println("actualText1 = " + actualText1);
