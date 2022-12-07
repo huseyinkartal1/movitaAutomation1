@@ -48,7 +48,7 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
 
     @And("click on Raporlar")
     public void clickOnRaporlar() {
-        waitForVisibility(movita.menuRaporlar, 5).click();
+        click(movita.menuRaporlar);
     }
 
     @And("click on Araç Bazlı Rapor")
