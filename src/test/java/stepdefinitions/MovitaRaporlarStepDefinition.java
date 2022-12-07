@@ -53,12 +53,13 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
 
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() throws InterruptedException {
-       click(movita.aracBazliRapor);
+       click(movita.menuAracBazliRapor);
     }
 
     @Then("click  on Rapor al")
     public void clickOnRaporAl() {
         String expectedURL = Driver.getDriver().getCurrentUrl();
+
         waitForVisibility(movita.menuRaporAlButton, 5).click();
         assertNotEquals(Driver.getDriver().getCurrentUrl(), expectedURL);
     }
