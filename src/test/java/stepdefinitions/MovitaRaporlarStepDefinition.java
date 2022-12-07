@@ -56,7 +56,7 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
       //  new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 20)).perform();
         Thread.sleep(2000);
         waitFor(2);
-        waitForVisibility(movita.menuAracBazliRapor, 5).click();
+        movita.menuAracBazliRapor.click();
 
     }
 
