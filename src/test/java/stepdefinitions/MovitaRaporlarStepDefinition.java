@@ -51,10 +51,10 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     }
 
     @And("click on Araç Bazlı Rapor")
-    public void clickOnAraçBazlıRapor() {
+    public void clickOnAraçBazlıRapor() throws InterruptedException {
 
       //  new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 20)).perform();
-
+        Thread.sleep(2000);
         waitForClickablility(movita.menuAracBazliRapor, 5).click();
 
     }
