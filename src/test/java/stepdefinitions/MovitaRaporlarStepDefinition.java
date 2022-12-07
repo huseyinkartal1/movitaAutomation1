@@ -8,9 +8,11 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
@@ -50,69 +52,70 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     }
 
     @And("click on Araç Bazlı Rapor")
-    public void clickOnAraçBazlıRapor() {
-        waitForVisibility(movita.menuAracBazliRapor, 5).click();
+    public void clickOnAraçBazlıRapor() throws InterruptedException {
 
+        click(movita.menuAracBazliRapor);
     }
 
     @Then("click  on Rapor al")
     public void clickOnRaporAl() {
         String expectedURL = Driver.getDriver().getCurrentUrl();
-        waitForVisibility(movita.menuRaporAlButton, 5).click();
+        waitFor(3);
+        click(movita.menuRaporAlButton);
         assertNotEquals(Driver.getDriver().getCurrentUrl(), expectedURL);
     }
 
     @And("click on Yakıt Entegrasyon Raporu")
     public void clickOnYakıtEntegrasyonRaporu() {
-        waitForVisibility(movita.menuYakitEntegrasyonRaporu, 5).click();
+        click(movita.menuYakitEntegrasyonRaporu);
     }
 
 
     @And("click on Günlük Seyehat")
     public void clickOnGünlükSeyehat() {
-        waitForVisibility(movita.menuGunlukSeyahatRaporu, 5).click();
+        click(movita.menuGunlukSeyahatRaporu);
     }
 
     @And("click on Aktivite Detay Raporu")
     public void clickOnAktiviteDetayRaporu() {
-        waitForVisibility(movita.menuAktiviteDetayRaporu, 5).click();
+        click(movita.menuAktiviteDetayRaporu);
     }
 
     @And("click on Araç Karne")
     public void clickOnAraçKarne() {
-        waitForVisibility(movita.menuAracKarneRaporu, 5).click();
+        click(movita.menuAracKarneRaporu);
     }
 
     @And("click on Filo Bazlı Rapor")
     public void clickOnFiloBazlıRapor() {
-        waitForVisibility(movita.menuFiloBazliRapor, 5).click();
+        click(movita.menuFiloBazliRapor);
     }
 
     @And("click on Grup Bazlı Rapor")
     public void clickOnGrupBazlıRapor() {
-        waitForVisibility(movita.menuGrupBazliRapor, 5).click();
+        click(movita.menuGrupBazliRapor);
     }
 
     @And("click on Alarm Log Raporu")
     public void clickOnAlarmLogRaporu() {
-        waitForVisibility(movita.menuAlarmLogRaporu, 5).click();
+        click(movita.menuAlarmLogRaporu);
     }
 
     @Then("click on Sorgula")
     public void clickOnSorgula() {
-        waitForClickablility(movita.menuSorgulaButton, 5);
+        click(movita.menuSorgulaButton);
     }
 
 
     @And("click on Şoför Log Raporu")
     public void clickOnŞoförLogRaporu() {
-        waitForVisibility(movita.menuSoforLogRaporu, 5).click();
+        click(movita.menuSoforLogRaporu);
 
     }
 
     @And("click on Sensör Raporu")
     public void clickOnSensörRaporu() {
-        waitForVisibility(movita.menuSensorRaporu, 5).click();
+        click(movita.menuSensorRaporu);
     }
     /*  huseyinKartal
      *  SmokeTest_US_MAT-127-Report_Modules
