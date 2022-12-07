@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.WebElement;
@@ -56,8 +57,10 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
       //  new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 20)).perform();
         Thread.sleep(2000);
         waitFor(2);
-        movita.menuAracBazliRapor.click();
+      // waitForVisibility(movita.menuAracBazliRapor,5).click();
 
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();",movita.menuAracBazliRapor);
     }
 
     @Then("click  on Rapor al")
