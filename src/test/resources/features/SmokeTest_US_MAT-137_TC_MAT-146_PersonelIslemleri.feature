@@ -1,4 +1,4 @@
-
+@smoketest
 Feature: Smoke Test For Personel Islemleri
 
   Scenario: Personel Islemleri Functionality

@@ -1,3 +1,4 @@
+@smoketest
 Feature: Smoke Test Report Modules
   Scenario: Smoke Test Report Modules
     Given user navigates to login page
