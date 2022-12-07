@@ -48,19 +48,12 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
 
     @And("click on Raporlar")
     public void clickOnRaporlar() {
-        waitForVisibility(movita.menuRaporlar, 20).click();
+        waitForVisibility(movita.menuRaporlar, 5).click();
     }
 
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() throws InterruptedException {
-
-      //  new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 20)).perform();
-        Thread.sleep(2000);
-        waitFor(2);
-      // waitForVisibility(movita.menuAracBazliRapor,5).click();
-
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();",movita.menuAracBazliRapor);
+       click(movita.aracBazliRapor);
     }
 
     @Then("click  on Rapor al")

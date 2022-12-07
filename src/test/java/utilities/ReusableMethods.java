@@ -1,5 +1,6 @@
 package utilities;
 
+import io.cucumber.java.zh_cn.而且;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -155,4 +156,29 @@ public class ReusableMethods {
 
         return element;
     }
+
+    public void click(WebElement e){
+        try {
+            waitForVisibility(e,5).click();
+        } catch (Exception ex) {
+            try {
+                new Actions(Driver.getDriver()).click(waitForVisibility(e, 5)).perform();
+            } catch (Exception exc) {
+                JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+                js.executeScript("arguments[0].click();",waitForVisibility(e,5));
+            }
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
