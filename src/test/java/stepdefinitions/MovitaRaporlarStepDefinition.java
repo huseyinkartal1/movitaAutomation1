@@ -53,9 +53,9 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() {
 
-        new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 20)).perform();
+      //  new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 20)).perform();
 
-       // waitForVisibility(movita.menuAracBazliRapor, 5).click();
+        waitForClickablility(movita.menuAracBazliRapor, 5).click();
 
     }
 
