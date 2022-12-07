@@ -335,7 +335,7 @@ public class MovitaPage {
  //SmokeTest_US_MAT-127-Report_Modules
  //Login Page Menu - Reports Locators
 
- @FindBy(xpath = "//*[text()=\"Raporlar\"]")
+ @FindBy(xpath = "//span[text()=\"Raporlar\"]")
  public WebElement menuRaporlar;
 
  @FindBy(xpath = ".//*[text()=\"Araç Bazlı Rapor\"]")
