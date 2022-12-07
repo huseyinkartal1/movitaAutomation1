@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
@@ -51,7 +52,10 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
 
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() {
-        waitForVisibility(movita.menuAracBazliRapor, 5).click();
+
+        new Actions(Driver.getDriver()).click(waitForVisibility(movita.menuAracBazliRapor, 5)).perform();
+
+       // waitForVisibility(movita.menuAracBazliRapor, 5).click();
 
     }
 
