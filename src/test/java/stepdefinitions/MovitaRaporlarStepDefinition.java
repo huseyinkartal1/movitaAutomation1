@@ -54,7 +54,8 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     @And("click on Araç Bazlı Rapor")
     public void clickOnAraçBazlıRapor() throws InterruptedException {
 
-       movita.menuAracBazliRapor.click();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();",movita.menuAracBazliRapor);
     }
 
     @Then("click  on Rapor al")
