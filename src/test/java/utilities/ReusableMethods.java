@@ -159,13 +159,13 @@ public class ReusableMethods {
 
     public void click(WebElement e){
         try {
-            waitForVisibility(e,5).click();
+            waitForVisibility(e,20).click();
         } catch (Exception ex) {
             try {
-                new Actions(Driver.getDriver()).click(waitForVisibility(e, 5)).perform();
+                new Actions(Driver.getDriver()).click(waitForVisibility(e, 20)).perform();
             } catch (Exception exc) {
                 JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-                js.executeScript("arguments[0].click();",waitForVisibility(e,5));
+                js.executeScript("arguments[0].click();",waitForVisibility(e,20));
             }
         }
 
