@@ -60,61 +60,61 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     @Then("click  on Rapor al")
     public void clickOnRaporAl() {
         String expectedURL = Driver.getDriver().getCurrentUrl();
-        waitForVisibility(movita.menuRaporAlButton, 5).click();
+        click(movita.menuRaporAlButton);
         assertNotEquals(Driver.getDriver().getCurrentUrl(), expectedURL);
     }
 
     @And("click on Yakıt Entegrasyon Raporu")
     public void clickOnYakıtEntegrasyonRaporu() {
-        waitForVisibility(movita.menuYakitEntegrasyonRaporu, 5).click();
+        click(movita.menuYakitEntegrasyonRaporu);
     }
 
 
     @And("click on Günlük Seyehat")
     public void clickOnGünlükSeyehat() {
-        waitForVisibility(movita.menuGunlukSeyahatRaporu, 5).click();
+        click(movita.menuGunlukSeyahatRaporu);
     }
 
     @And("click on Aktivite Detay Raporu")
     public void clickOnAktiviteDetayRaporu() {
-        waitForVisibility(movita.menuAktiviteDetayRaporu, 5).click();
+        click(movita.menuAktiviteDetayRaporu);
     }
 
     @And("click on Araç Karne")
     public void clickOnAraçKarne() {
-        waitForVisibility(movita.menuAracKarneRaporu, 5).click();
+        click(movita.menuAracKarneRaporu);
     }
 
     @And("click on Filo Bazlı Rapor")
     public void clickOnFiloBazlıRapor() {
-        waitForVisibility(movita.menuFiloBazliRapor, 5).click();
+        click(movita.menuFiloBazliRapor);
     }
 
     @And("click on Grup Bazlı Rapor")
     public void clickOnGrupBazlıRapor() {
-        waitForVisibility(movita.menuGrupBazliRapor, 5).click();
+        click(movita.menuGrupBazliRapor);
     }
 
     @And("click on Alarm Log Raporu")
     public void clickOnAlarmLogRaporu() {
-        waitForVisibility(movita.menuAlarmLogRaporu, 5).click();
+        click(movita.menuAlarmLogRaporu);
     }
 
     @Then("click on Sorgula")
     public void clickOnSorgula() {
-        waitForClickablility(movita.menuSorgulaButton, 5);
+        click(movita.menuSorgulaButton);
     }
 
 
     @And("click on Şoför Log Raporu")
     public void clickOnŞoförLogRaporu() {
-        waitForVisibility(movita.menuSoforLogRaporu, 5).click();
+        click(movita.menuSoforLogRaporu);
 
     }
 
     @And("click on Sensör Raporu")
     public void clickOnSensörRaporu() {
-        waitForVisibility(movita.menuSensorRaporu, 5).click();
+        click(movita.menuSensorRaporu);
     }
     /*  huseyinKartal
      *  SmokeTest_US_MAT-127-Report_Modules
