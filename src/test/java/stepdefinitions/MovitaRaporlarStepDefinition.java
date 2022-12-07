@@ -48,7 +48,7 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
 
     @And("click on Raporlar")
     public void clickOnRaporlar() {
-        click(movita.menuRaporlar);
+        waitForVisibility(movita.menuRaporlar, 5).click();
     }
 
     @And("click on Araç Bazlı Rapor")
@@ -60,6 +60,7 @@ public class MovitaRaporlarStepDefinition extends ReusableMethods {
     @Then("click  on Rapor al")
     public void clickOnRaporAl() {
         String expectedURL = Driver.getDriver().getCurrentUrl();
+        waitFor(3);
         click(movita.menuRaporAlButton);
         assertNotEquals(Driver.getDriver().getCurrentUrl(), expectedURL);
     }
