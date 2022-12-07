@@ -338,7 +338,7 @@ public class MovitaPage {
  @FindBy(css = "i.ft-pie-chart")
  public WebElement menuRaporlar;
 
- @FindBy(css = "a.menu-item")
+ @FindBy(css = "#arac_bazli_rpr")
  public WebElement menuAracBazliRapor;
 
 
