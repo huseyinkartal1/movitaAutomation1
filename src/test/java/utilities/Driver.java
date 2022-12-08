@@ -17,6 +17,7 @@ public class Driver {
             switch (browser){
                 case "chrome":
                     //System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe");
+                    System.setProperty("webdriver.chrome.whitelistedIps", "");
                     WebDriverManager.chromedriver().setup();
                     driver=new ChromeDriver();
                     driver.manage().window().maximize();
