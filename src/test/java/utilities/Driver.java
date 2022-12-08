@@ -16,7 +16,7 @@ public class Driver {
             String browser=ConfigurationReader.getProperty("browser");
             switch (browser){
                 case "chrome":
-                    System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
+                    System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe");
                     //WebDriverManager.chromedriver().setup();
                     driver=new ChromeDriver();
                     driver.manage().window().maximize();
