@@ -64,6 +64,7 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
+
                     <includes>
                         <include>**/runners/*TestRunner*.java</include>
                     </includes>
@@ -88,6 +89,7 @@
                         <include>**/runners/*TestRunner*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
+
                 </configuration>
             </plugin>
             <plugin>
@@ -110,6 +112,7 @@
                             </jsonFiles><classificationFiles>->
                             <param>sample.properties</param>
                             <param>other.properties</param>
+
                         </classificationFiles>
                         </configuration>
                     </execution>

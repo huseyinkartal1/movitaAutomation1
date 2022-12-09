@@ -94,6 +94,11 @@ public class ReusableMethods {
 
     //===============Explicit Wait==============//
     public static WebElement waitForVisibility(WebElement element, int timeout) {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
