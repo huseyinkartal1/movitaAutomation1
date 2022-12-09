@@ -89,6 +89,7 @@
                         <include>**/runners/*TestRunner*.java</include>
                     </includes>
                     <testFailureIgnore>true</testFailureIgnore>
+                    <skipTests>false</skipTests>
                 </configuration>
             </plugin>
             <plugin>
@@ -111,6 +112,7 @@
                             </jsonFiles><classificationFiles>->
                             <param>sample.properties</param>
                             <param>other.properties</param>
+                            <skipTests>false</skipTests>
                         </classificationFiles>
                         </configuration>
                     </execution>
