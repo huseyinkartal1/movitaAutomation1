@@ -10,58 +10,58 @@ import java.util.List;
 public class MovitaPage {
 
 
-    public MovitaPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
+ public MovitaPage(){
+  PageFactory.initElements(Driver.getDriver(),this);
+ }
 
 
-    @FindBy(xpath = "//div[text()=\"Kurumsal\"]")
-   public WebElement kurumsalMenu;
+ @FindBy(xpath = "//div[text()=\"Kurumsal\"]")
+ public WebElement kurumsalMenu;
 
-    @FindBy(xpath = "(//ul[@class=\"sub-menu-container\"])[1]")
-    public List<WebElement> subKurumsalMenu;
+ @FindBy(xpath = "(//ul[@class=\"sub-menu-container\"])[1]")
+ public List<WebElement> subKurumsalMenu;
 
-    @FindBy (id = "logo")
-    public WebElement movitaLogo;
+ @FindBy (id = "logo")
+ public WebElement movitaLogo;
 
-    @FindBy(xpath = "//div[text()=\"Mobil Vasıta İzleme Takip Sistemi\"]")
-    public WebElement mainTextTurkish;
+ @FindBy(xpath = "//div[text()=\"Mobil Vasıta İzleme Takip Sistemi\"]")
+ public WebElement mainTextTurkish;
 
 
  @FindBy(xpath = "//*[.=\"NEDEN TAKİP SİSTEMİ\"]")
  public WebElement nedenTakipSistemi;
-    //-------------Cozumler-----------
+ //-------------Cozumler-----------
 //-------------Okul servis araclari----------
 
-    @FindBy(xpath = "(//h4)[4]")
-    public WebElement cozumlerOkul;
+ @FindBy(xpath = "(//h4)[4]")
+ public WebElement cozumlerOkul;
 
-    @FindBy(xpath = "//h1")
-    public WebElement okulServisText;
+ @FindBy(xpath = "//h1")
+ public WebElement okulServisText;
 
 //-------------Kamerali arac takip sistemi-----------
 
-    @FindBy(xpath = "(//h4)[5]")
-    public WebElement cozumlerKamerali;
+ @FindBy(xpath = "(//h4)[5]")
+ public WebElement cozumlerKamerali;
 
-    @FindBy(xpath = "//h1")
-    public WebElement kameraliAracText;
+ @FindBy(xpath = "//h1")
+ public WebElement kameraliAracText;
 
 //-------------Kişi Bilgilendirme Sistemi-----------
 
-    @FindBy(xpath = "(//h4)[6]")
-    public WebElement cozumlerKisi;
+ @FindBy(xpath = "(//h4)[6]")
+ public WebElement cozumlerKisi;
 
-    @FindBy(xpath = "//h1")
-    public WebElement kisiBilgilendirmeText;
+ @FindBy(xpath = "//h1")
+ public WebElement kisiBilgilendirmeText;
 
 //-------------Kişi ve Nesne Sistemi-----------
 
-    @FindBy(xpath = "//*[@id=\"post-list-footer\"]/div[4]/div/div/div/h4/a")
-    public WebElement cozumlerKisiVeNesne;
+ @FindBy(xpath = "//*[@id=\"post-list-footer\"]/div[4]/div/div/div/h4/a")
+ public WebElement cozumlerKisiVeNesne;
 
-    @FindBy(xpath = "//h1")
-    public WebElement kisiVeNesneText;
+ @FindBy(xpath = "//h1")
+ public WebElement kisiVeNesneText;
 
 
  //---------Clickable Drowdown Language Menu---------------------
@@ -110,9 +110,9 @@ public class MovitaPage {
  @FindBy(xpath="//li[text()=\"Lütfen kullanıcı adınızı girdiğinizden emin olun!\"]")
  public WebElement noneCredentials;
 
-@FindBy(id="username")
+ @FindBy(id="username")
  public WebElement userName;
-@FindBy(id="telefon")
+ @FindBy(id="telefon")
  public WebElement phoneNumber;
 
  @FindBy(xpath="//div[@class=\"toast-message\"]")
@@ -435,44 +435,44 @@ public class MovitaPage {
  @FindBy(xpath = "//li[@id='yakit_bazli_rpr']")
  public WebElement yakitBazli;
 
-@FindBy(xpath = "//li[@id='arac_bazli_guzergah']")
+ @FindBy(xpath = "//li[@id='arac_bazli_guzergah']")
  public WebElement aracBazliGuzergah;
 
-@FindBy(xpath = "//li[@id='rota_optimizasyonu_oto']")
+ @FindBy(xpath = "//li[@id='rota_optimizasyonu_oto']")
  public WebElement optimizasyon;
 
-@FindBy(xpath = "//li[@id='personel_listesi']")
+ @FindBy(xpath = "//li[@id='personel_listesi']")
  public WebElement personel;
 
-@FindBy(xpath = "//li[@id='filo_yonetim']")
+ @FindBy(xpath = "//li[@id='filo_yonetim']")
  public WebElement grupYonetimi;
 
-@FindBy(xpath = "//li[@id='arac_islem']")
+ @FindBy(xpath = "//li[@id='arac_islem']")
  public WebElement aracIslemleri;
 
-@FindBy(xpath = "//*[@id=\"main-menu-navigation\"]/li[2]/a")
-public WebElement raporlar3;
+ @FindBy(xpath = "//*[@id=\"main-menu-navigation\"]/li[2]/a")
+ public WebElement raporlar3;
 
-@FindBy(xpath = "//*[@id=\"alarm_listesi\"]/a")
-public WebElement alarmIslemleri2;
+ @FindBy(xpath = "//*[@id=\"alarm_listesi\"]/a")
+ public WebElement alarmIslemleri2;
 
-@FindBy(xpath = "//a[@href=\"/alarm-listesi\"]")
-public WebElement alarmIslemleri3;
+ @FindBy(xpath = "//a[@href=\"/alarm-listesi\"]")
+ public WebElement alarmIslemleri3;
 
-@FindBy(xpath = "//img[@id=\"ic-logo\"]")
-public WebElement movitaLogo2;
+ @FindBy(xpath = "//img[@id=\"ic-logo\"]")
+ public WebElement movitaLogo2;
 
-@FindBy(xpath = "//div[@class='content-wrapper']")
-public WebElement loginPageLayout;
+ @FindBy(xpath = "//div[@class='content-wrapper']")
+ public WebElement loginPageLayout;
 
-@FindBy(xpath = "/html/body/footer/p/span")
-public WebElement copyRight;
+ @FindBy(xpath = "/html/body/footer/p/span")
+ public WebElement copyRight;
 
  // Login Page - Login Button
  @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
-public WebElement loginButton;
+ public WebElement loginButton;
 
-@FindBy (css = "select.yearselect")
+ @FindBy (css = "select.yearselect")
  public WebElement selectYear1;
  @FindBy (css = "select.monthselect")
  public WebElement selectMonth1;
@@ -698,6 +698,19 @@ public WebElement loginButton;
 
  @FindBy(xpath = "//li[@id='personel_talep_listesi']")
  public WebElement personelSikayetTalep;
+
+ //-----SmokeTest_MAT-136_AlarmIslemleri-----
+
+ @FindBy(xpath = "//*[text()='Alarm Listesi']")
+ public WebElement alarmListesi;
+
+ //-----SmokeTest_MAT-136_RotaIslemleri-----
+
+ @FindBy(xpath = "//li[@id='istasyon_listesi']")
+ public WebElement istasyonListesi;
+
+ @FindBy(xpath = "//li[@id='durak_listesi']")
+ public WebElement durakListesi;
 
 
 }
