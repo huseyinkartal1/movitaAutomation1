@@ -1311,5 +1311,70 @@ waitForClickablility(movita.istasyonListesi,2).click();
     }
 
 
+    // Alkan Tuncer - SmokeTest_US_MAT-137_TC_MAT-146
 
+    @Then("User click to Personel Islemleri")
+    public void userClickToPersonelIslemleri() {
+        waitForVisibility(movita.personelIslemleri,2).click();
+    }
+
+    @Then("User click to Personel")
+    public void userClickToPersonel() {
+        waitForVisibility(movita.personel,2).click();
+    }
+
+    @Then("User should be on Personel Listesi page")
+    public void userShouldBeOnPersonelListesiPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/personel-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Is Atama")
+    public void userClickToIsAtama() {
+        waitForVisibility(movita.isAtama,2).click();
+    }
+
+    @Then("User should be on Is Atama page")
+    public void userShouldBeOnIsAtamaPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/is-atama-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Servis Islemleri")
+    public void userClickToServisIslemleri() {
+        waitForVisibility(movita.servisIslemleri,2).click();
+    }
+
+    @Then("User should be on Servis Islemleri page")
+    public void userShouldBeOnServisIslemleriPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/servis-islemleri",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Birim Listesi")
+    public void userClickToBirimListesi() {
+        waitForVisibility(movita.birimListesi,2).click();
+    }
+
+    @Then("User should be on Birim Listesi page")
+    public void userShouldBeOnBirimListesiPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/birim-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Personel Anket")
+    public void userClickToPersonelAnket() {
+        waitForVisibility(movita.personelAnket,2).click();
+    }
+
+    @Then("User should be on Personel Anket page")
+    public void userShouldBeOnPersonelAnketPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/personel-anket-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("User click to Personel Sikayet Talep")
+    public void userClickToPersonelSikayetTalep() {
+        waitForVisibility(movita.personelSikayetTalep,2).click();
+    }
+
+    @Then("User should be on Personel Sikayet Talep page")
+    public void userShouldBeOnPersonelSikayetTalepPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/personel-talep-listesi",Driver.getDriver().getCurrentUrl());
+    }
 }
