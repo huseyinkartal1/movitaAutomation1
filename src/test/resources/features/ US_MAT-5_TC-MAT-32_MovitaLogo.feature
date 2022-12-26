@@ -1,4 +1,4 @@
-@movitaTest
+@smoketest1
 Feature: Movita Tests
 
   Background:
