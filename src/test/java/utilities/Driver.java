@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
@@ -21,7 +22,7 @@ public class Driver {
                     WebDriverManager.chromedriver().setup();
 
                     ChromeOptions options = new ChromeOptions();
-                    options.addArguments("headless");
+                    options.addArguments("--headless");
                     driver = new ChromeDriver(options);
 /*
 
@@ -33,15 +34,19 @@ public class Driver {
                     options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
                     options.addArguments("--no-sandbox"); // Bypass OS security model*/
 
-
-
                 //    driver=new ChromeDriver();
                   //  driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                     break;
+
                 case "firefox":
+
                     WebDriverManager.firefoxdriver().setup();
-                    driver=new FirefoxDriver();
+                    FirefoxOptions options1 = new FirefoxOptions();
+                    options1.addArguments("--headless");
+                    driver = new FirefoxDriver(options1);
+
+                  //  driver=new FirefoxDriver();
                     break;
                 case "safari":
                     //WebDriverManager.safaridriver().setup();
