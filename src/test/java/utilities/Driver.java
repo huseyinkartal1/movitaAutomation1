@@ -19,11 +19,13 @@ public class Driver {
                 case "chrome":
                     //System.setProperty("webdriver.chrome.driver","Drivers/chromedriver.exe");
                     WebDriverManager.chromedriver().setup();
-
+                    ChromeOptions options = new ChromeOptions();
+                 //   options.addArguments("--headless");
+                    options.addArguments("--start-maximized");
+                    options.addArguments("--window-size=1920,900");
 
                 /*
-                    ChromeOptions options = new ChromeOptions();
-                    options.addArguments("--headless");
+
                     options.addArguments("--start-maximized"); // open Browser in maximized mode
                     options.addArguments("disable-infobars"); // disabling infobars
                     options.addArguments("--disable-extensions"); // disabling extensions
@@ -32,8 +34,8 @@ public class Driver {
                     options.addArguments("--no-sandbox"); // Bypass OS security model
                     driver = new ChromeDriver(options);*/
 
-                    driver=new ChromeDriver();
-                    driver.manage().window().maximize();
+                    driver=new ChromeDriver(options);
+                   // driver.manage().window().maximize();
                     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
                     break;
                 case "firefox":

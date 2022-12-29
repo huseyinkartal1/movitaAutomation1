@@ -1,9 +1,9 @@
-@movitaTest
+
 Feature: Movita Tests
 
   Background:
     Given kullanıcı movita sayfasına gider
-
+  @smoketest1
   Scenario: Movita TC_01
     Given  kullanıcı movita losgosuna tıklar
     Then Mobil Vasita izleme takip Sistemi yazısı ekranda görünür
