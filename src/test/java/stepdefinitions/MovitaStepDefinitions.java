@@ -33,6 +33,7 @@ public class MovitaStepDefinitions extends ReusableMethods {
     @Given("User navigates to {string} page")
     public void user_navigates_to_page(String homePage) {
         Driver.getDriver().get(ConfigurationReader.getProperty(homePage));
+
     }
 
     @When("clicks on movita logo")
@@ -1377,4 +1378,34 @@ waitForClickablility(movita.istasyonListesi,2).click();
     public void userShouldBeOnPersonelSikayetTalepPage() {
         Assert.assertEquals("http://movita.com.tr:9045/personel-talep-listesi",Driver.getDriver().getCurrentUrl());
     }
+
+    //Murat YILMAZ  -   US_MAT-71_TC_MAT-102
+
+    @And("User scroll down to seventh section")
+    public void userScrollDownToSeventhSection() {
+        ReusableMethods.hover(movita.adres);
+    }
+
+    @Then("User should see “Adres”, “Telefon”, and “email”")
+    public void userShouldSeeAdresTelefonAndEmail() {
+        Assert.assertTrue(movita.adres.isDisplayed());
+        Assert.assertTrue(movita.telefon.isDisplayed());
+        Assert.assertTrue(movita.eMail.isDisplayed());
+    }
+
+    @And("User verify the expected texts")
+    public void userVerifyTheExpectedTexts() {
+        String expectedText = movita.expectedText.getText();
+        System.out.println("expectedText= " + movita.expectedText.getText());
+
+        Assert.assertEquals(expectedText, "Adres:\n" +
+                "Beştepe Mahallesi\n" +
+                "Nergiz Sokak No:7/2 Via Flat\n" +
+                "Yenimahalle/ANKARA\n" +
+                "Telefon: + 90 (850) 557 7627\n" +
+                "Email: bilgi@movita.com.tr");
+
+    }
+
+
 }

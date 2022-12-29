@@ -712,5 +712,23 @@ public class MovitaPage {
  @FindBy(xpath = "//li[@id='durak_listesi']")
  public WebElement durakListesi;
 
+ //Murat YILMAZ  -   US_MAT-71_TC_MAT-102
+ @FindBy(xpath = "//*[text()='Adres:']")
+ public WebElement adres;
+
+ @FindBy(xpath = "//*[text()='Telefon:']")
+ public WebElement telefon;
+
+ @FindBy(xpath = "//*[text()='Email:']")
+ public WebElement eMail;
+
+ @FindBy(xpath = "//*[@id=\"footer\"]/div[1]/div/div/div/div/div[2]/div")
+ public WebElement expectedText;
+
+
+
+
+
+
 
 }
