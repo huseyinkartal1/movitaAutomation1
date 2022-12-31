@@ -725,6 +725,93 @@ public class MovitaPage {
  @FindBy(xpath = "//*[@id=\"footer\"]/div[1]/div/div/div/div/div[2]/div")
  public WebElement expectedText;
 
+ //Murat YILMAZ  -  US_MAT103-TC-02
+
+@FindBy(xpath = "//*[text()='Mesafeli Satış Sözleşmesi']")
+ public WebElement mesafeliSatisSozlesmesi;
+
+ @FindBy(xpath = "//h1[text()='Mesafeli Satış Sözleşmesi']")
+ public WebElement mesafeliSatisSozlesmesiText;
+
+ @FindBy(xpath = "//*[text()='Gizlilik Politikası']")
+ public WebElement gizlilikPolitikasi;
+
+ @FindBy(xpath = "//h1[text()='GİZLİLİK POLİTİKASI']")
+ public WebElement gizlilikPolitikasiText;
+
+ @FindBy(xpath = "//*[text()='Ödeme ve Teslimat']")
+ public WebElement odemeVeTeslimat;
+
+ @FindBy(xpath = "//h1[text()='ÖDEME VE TESLİMAT']")
+ public WebElement odemeVeTeslimatText;
+
+ @FindBy(xpath = " //*[text()='Garanti Şartları']")
+ public WebElement garantiSartlari;
+
+ @FindBy(xpath = "//h1[text()='ÖDEME VE TESLİMAT']")
+ public WebElement garantiSartlariText;
+
+ @FindBy(xpath = "//*[text()='İade Şartları']")
+ public WebElement iadeSartlari;
+
+ @FindBy(xpath = "//h1[text()='Ürünler']")
+ public WebElement urunlerText;
+
+ //Murat YILMAZ - US_MAT105-TC-03
+
+ @FindBy(xpath = "//a[text()='Hakkımızda']")
+ public WebElement hakkimizda2;
+
+ @FindBy(xpath = "//h1[text()='Hakkımızda']")
+ public WebElement hakkimizda2Text;
+
+ @FindBy(xpath = "//a[text()='Belgelerimiz'] ")
+ public WebElement belgelerimiz2;
+
+ @FindBy(xpath = "//a[text()='Bayilik Başvurusu']")
+ public WebElement bayilikBasvurusu;
+
+ @FindBy(xpath = "//h1[text()='Bayilik Başvuru']   ")
+ public WebElement bayilikBasvurusuText;
+
+ @FindBy(xpath = "//a[text()='Demo Başvurusu']")
+ public WebElement demoBasvurusu;
+
+ @FindBy(xpath = "//h1[text()='Demo Başvuru']")
+ public WebElement demoBasvurusuText;
+
+ @FindBy(xpath = "//a[text()='Ürünler']")
+ public WebElement urunler2;
+
+ @FindBy(xpath = "//a[text()='Rota Optimizasyonu']")
+ public WebElement rotaOptimizasyonu2;
+
+ @FindBy(xpath = "//h1[text()='Rota Optimizasyonu']")
+ public WebElement rotaOptimizasyonu2Text;
+
+ @FindBy(xpath = "//a[text()='İletişim']")
+ public WebElement iletisim2;
+
+ @FindBy(xpath = "//h1[text()='İADE ŞARTLARI']")
+ public WebElement iadeSartlariText;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
