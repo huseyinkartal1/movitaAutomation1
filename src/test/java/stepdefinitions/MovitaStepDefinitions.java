@@ -3,16 +3,19 @@ package stepdefinitions;
 
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.bs.A;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -1405,6 +1408,138 @@ waitForClickablility(movita.istasyonListesi,2).click();
                 "Telefon: + 90 (850) 557 7627\n" +
                 "Email: bilgi@movita.com.tr");
 
+    }
+
+
+    //Murat YILMAZ  -   US_MAT103-TC-02_Seventh_section "POLITIKAMIZ" Verify
+
+    @And("User should click “Mesafeli Satis Sözlesmesi”")
+    public void userShouldClickMesafeliSatisSözlesmesi() {
+        movita.mesafeliSatisSozlesmesi.click();
+    }
+
+    @Then("User should see “MESAFELI SATIŞ SÖZLEŞMESI“ text")
+    public void userShouldSeeMESAFELISATIŞSÖZLEŞMESIText() {
+        String actualMesSatSoz=movita.mesafeliSatisSozlesmesiText.getText();
+        Assert.assertEquals("MESAFELI SATIŞ SÖZLEŞMESI",actualMesSatSoz);
+    }
+
+    @And("User should click “Gizlilik Politikasi”")
+    public void userShouldClickGizlilikPolitikasi() {
+        movita.gizlilikPolitikasi.click();
+    }
+
+    @Then("User should see “GİZLİLİK POLİTİKASI“ text")
+    public void userShouldSeeGİZLİLİKPOLİTİKASIText() {
+        String actualGizPol=movita.gizlilikPolitikasiText.getText();
+        Assert.assertEquals("GİZLİLİK POLİTİKASI",actualGizPol);
+    }
+
+    @And("User should click “Ödeme ve Teslimat”")
+    public void userShouldClickÖdemeVeTeslimat() {
+        movita.odemeVeTeslimat.click();
+    }
+
+    @Then("User should see “ÖDEME VE TESLİMAT“ text")
+    public void userShouldSeeÖDEMEVETESLİMATText() {
+        String actualOdemeVeTes=movita.odemeVeTeslimatText.getText();
+        Assert.assertEquals("ÖDEME VE TESLİMAT",actualOdemeVeTes);
+    }
+
+    @And("User should click “Garanti Sartlari”")
+    public void userShouldClickGarantiSartlari() {
+        movita.garantiSartlari.click();
+    }
+
+    @Then("User should see “GARANTİ ŞARTLARI“ text")
+    public void userShouldSeeGARANTİŞARTLARIText() {
+        String actualGarSartlari= movita.garantiSartlariText.getText();
+        Assert.assertNotEquals("GARANTİ ŞARTLARI",actualGarSartlari);
+    }
+
+    @And("User should click “Iade Sartlari”")
+    public void userShouldClickIadeSartlari() {
+        movita.iadeSartlari.click();
+    }
+
+    @Then("User should see “ÜRÜNLER“ text")
+    public void userShouldSeeÜRÜNLERText() {
+        String actualUrunler=movita.urunlerText.getText();
+        Assert.assertEquals("ÜRÜNLER",actualUrunler);
+    }
+
+    //Murat YILMAZ - US_MAT105-TC-03
+
+    @And("User should click “Hakkimizda”")
+    public void userShouldClickHakkimizda() {
+        movita.hakkimizda2.click();
+    }
+
+    @Then("User should see “HAKKIMIZDA“ text")
+    public void userShouldSeeHAKKIMIZDAText() {
+        String actualHakkimizda=movita.hakkimizda2Text.getText();
+        Assert.assertEquals("HAKKIMIZDA",actualHakkimizda);
+    }
+
+    @And("User should click “Belgelerimiz”")
+    public void userShouldClickBelgelerimiz() {
+movita.belgelerimiz2.click();
+navigate_to_homepage();
+    }
+
+    @Then("User should see “BELGELERIMIZ“ text")
+    public void userShouldSeeBELGELERIMIZText() {
+
+    }
+
+    @And("User should click “Bayilik Basvurusu”")
+    public void userShouldClickBayilikBasvurusu() {
+        movita.bayilikBasvurusu.click();
+    }
+
+    @Then("User should see “BAYILIK BAŞVURU“ text")
+    public void userShouldSeeBAYILIKBAŞVURUText() {
+        String actualBayilikBasvurusu=movita.bayilikBasvurusuText.getText();
+        Assert.assertEquals("BAYILIK BAŞVURU",actualBayilikBasvurusu);
+    }
+
+    @And("User should click “Demo Basvurusu”")
+    public void userShouldClickDemoBasvurusu() {
+        movita.demoBasvurusu.click();
+    }
+
+    @Then("User should see “DEMO BAŞVURU“ text")
+    public void userShouldSeeDEMOBAŞVURUText() {
+        String actualDemoBasvurusu=movita.demoBasvurusuText.getText();
+        Assert.assertEquals("DEMO BAŞVURU",actualDemoBasvurusu);
+    }
+
+    @And("User should click “Ürünler”")
+    public void userShouldClickÜrünler() {
+        movita.urunler2.click();
+
+    }
+
+    @And("User should click “Rota Optimizasyonu”")
+    public void userShouldClickRotaOptimizasyonu() {
+        movita.rotaOptimizasyonu2.click();
+    }
+
+    @Then("User should see “ROTA OPTIMIZASYONU“ text")
+    public void userShouldSeeROTAOPTIMIZASYONUText() {
+        String actualRotaOptimizasyonu=movita.rotaOptimizasyonu2Text.getText();
+        Assert.assertEquals("ROTA OPTIMIZASYONU",actualRotaOptimizasyonu);
+    }
+
+    @And("User should click “Iletisim”")
+    public void userShouldClickIletisim() {
+        movita.iletisim2.click();
+    }
+
+    @Then("User should see “İADE ŞARTLARI“ text")
+    public void userShouldSeeİADEŞARTLARIText() {
+        String actualIadeSartlari=movita.iadeSartlariText.getText();
+        Assert.assertEquals("İADE ŞARTLARI",actualIadeSartlari);
     }
 
 
